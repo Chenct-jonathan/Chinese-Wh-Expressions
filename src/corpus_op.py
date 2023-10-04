@@ -3,7 +3,6 @@
 
 import re
 import json
-from pprint import pprint
 
 with open("corpus_op_re.json","r",encoding="utf-8") as f:
     corpus_op_re = json.load(f)
