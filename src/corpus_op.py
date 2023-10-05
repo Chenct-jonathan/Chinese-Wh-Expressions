@@ -3,7 +3,6 @@
 
 import re
 import json
-from pprint import pprint
 
 # 讀取 re
 with open("corpus_op_re.json","r",encoding="utf-8") as e:
@@ -16,12 +15,16 @@ def sinica_purger(i):
         pass    
     with open('../Corpus/raw/{}_sinica_raw.txt'.format(regexLIST[i][0]),encoding="utf-8") as f: # 配合 sinica 格式將 raw 語料重新依 'more' 切分
         raw = ''.join(f.readlines())
+        rawSET = set()
         rawLIST = raw.split('more\n')
-    with open('../Corpus/purged/{}_sinica_purged.txt'.format(regexLIST[i][0]),'a',encoding="utf-8") as g: # 逐句依 re 取出含有標的詞彙的部分並寫入_purged.txt 檔
+        rawLIST = [x for x in rawLIST if x not in rawSET and not rawSET.add(x)] # 移除相同之語料
+    with open('../Corpus/purged/{}_sinica_purged.txt'.format(regexLIST[i][0]),'a',encoding="utf-8") as g: # 逐句依 re 抽取含有標的詞彙的部分並寫入_purged.txt 檔
         lineCount = 1
         for j in rawLIST:  
-            purge = '\n'.join(re.findall(r'{}'.format(regexLIST[i][1]), j))
-            g.write(purge.replace("\t","").replace("\s","").replace(" ","").replace("\n","")+"\n")            
+            purgeLIST = re.findall(r'{}'.format(regexLIST[i][1]), j) # 抽取含有標的詞彙的句子
+            purgeLIST = [item.replace('\n', '') for item in purgeLIST] # 重新排列句子，處理句子被 "\n" 切開的情形
+            purge = '\n'.join(purgeLIST) # 重新整合句子，處理同時出現多個標的詞彙的情形
+            g.write(purge.replace("\t","").replace("\s","").replace(" ","")+"\n")            
             print("{}. {} ==> {}".format(lineCount, j, purge)) # 此處將顯示 {句數}. {raw 語料} ==> {取出部分}
             lineCount += 1
         
@@ -34,7 +37,7 @@ def main(i):
         sinica_purger(i)
     except Exception as e:
         resultDICT["{}_status".format(regexLIST[i][0])] = False
-        print(f"Error occurred when processing '{regexLIST[i][0]}': {type(e).__name__}.")
+        print(r"Error occurred when processing '{}': {}.".format(regexLIST[i][0], type(e).__name__))
         
     return resultDICT
 
