@@ -9,6 +9,15 @@ with open("corpus_op_re.json","r",encoding="utf-8") as e:
     corpus_op_re = json.load(e)
 regexLIST = list(corpus_op_re.items())
 
+# 處理無意義標點符號
+def rm_quote_m(inputLIST): 
+    inputLIST = [item.replace("」", "", 1) if item.startswith("」") else item for item in inputLIST] 
+    inputLIST = [item.replace("「", "", 1) if item.startswith("「") and "」" not in item[1:] else item for item in inputLIST]
+    inputLIST = [item.replace("」", "", 1) if "」" in item and "「" not in item else item for item in inputLIST]
+    inputLIST = [item.replace("「", "", 1) if "「" in item and "」" not in item else item for item in inputLIST]
+    
+    return inputLIST
+
 # 依 re 處理語料並寫入 _purged.txt 檔
 def sinica_purger(i):
     with open('../Corpus/purged/{}_sinica_purged.txt'.format(regexLIST[i][0]), 'w') as g: # 新增空的 .txt 檔，若有相同檔案會將之清空
