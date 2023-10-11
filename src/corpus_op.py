@@ -18,8 +18,8 @@ def sinica_purger(i):
         rawSET = set()
         rawLIST = raw.split('more\n')
         rawLIST = [x for x in rawLIST if x not in rawSET and not rawSET.add(x)] # 移除相同之語料
-    with open('../Corpus/purged/{}_sinica_purged.txt'.format(regexLIST[i][0]),'a',encoding="utf-8") as g: # 逐句依 re 抽取含有標的詞彙的部分並寫入_purged.txt 檔
-        lineCount = 1
+    with open('../Corpus/purged/{}_sinica_purged.txt'.format(regexLIST[i][0]),'a',encoding="utf-8") as g: 
+        lineCount = 1 
         for j in rawLIST:  
             purgeLIST = re.findall(r'{}'.format(regexLIST[i][1]), j) # 抽取含有標的詞彙的句子
             purgeLIST = [item.replace('\n', '') for item in purgeLIST] # 重新排列句子，處理句子被 "\n" 切開的情形
@@ -29,18 +29,21 @@ def sinica_purger(i):
             lineCount += 1
         
 
+# 為了方便了解執行狀態，main() 中在執行 sinica_purger() 時，會同步顯示標的詞彙狀態。 
 def main(i):
-    resultDICT = {"shei_status":True, # 方便了解執行狀態
-                  "shenMe_status":True
-                  }
+    resultDICT = {
+        "shei_status":True, # 依標的詞彙為單位執行 sinica_purger()
+        "shenMe_status":True
+    }
     try:
         sinica_purger(i)
-    except Exception as e:
+    except Exception as e: # 若遇到錯誤，會將錯誤訊息回傳。
         resultDICT["{}_status".format(regexLIST[i][0])] = False
         print(r"Error occurred when processing '{}': {}.".format(regexLIST[i][0], type(e).__name__))
         
     return resultDICT
 
+# 執行
 if __name__ == "__main__":
     for i in range(len(corpus_op_re)):
         main(i)
