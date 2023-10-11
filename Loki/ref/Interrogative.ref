@@ -1,0 +1,22 @@
+{
+    "language": "zh-tw",
+    "type": "advance",
+    "version": {
+        "atk": "v267",
+        "intent": "1.0"
+    },
+    "user_defined": {},
+    "utterance": {
+        "誰碰了我的電腦": {
+            "id": "56f55c77-3504-4687-8419-08be1f5be877",
+            "pos": "<CLAUSE_WhoQ>誰</CLAUSE_WhoQ><VerbP>碰了</VerbP><ENTITY_pronoun>我</ENTITY_pronoun><FUNC_inner>的</FUNC_inner><ENTITY_noun>電腦</ENTITY_noun>",
+            "lexy": [
+                "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(碰了|抱了|抽了|猶豫了|摸了|撞了|摔了|愣了|擋了|昏倒了|愣)</(ACTION_verb|VerbP)>"
+            ],
+            "pattern": "<CLAUSE_WhoQ>誰</CLAUSE_WhoQ><(ACTION_verb|VerbP)>[^<]+了</(ACTION_verb|VerbP)>(<ENTITY_pronoun>[^<]+</ENTITY_pronoun><FUNC_inner>的</FUNC_inner>)?<(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>[^<]+</(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>"
+        }
+    },
+    "alias": {},
+    "prompt": {},
+    "document": []
+}
