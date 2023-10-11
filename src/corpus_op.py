@@ -10,11 +10,12 @@ with open("corpus_op_re.json","r",encoding="utf-8") as e:
 regexLIST = list(corpus_op_re.items())
 
 # 處理無意義標點符號
-def rm_quote_m(inputLIST): 
+def rm_marks(inputLIST): 
     inputLIST = [item.replace("」", "", 1) if item.startswith("」") else item for item in inputLIST] 
     inputLIST = [item.replace("「", "", 1) if item.startswith("「") and "」" not in item[1:] else item for item in inputLIST]
     inputLIST = [item.replace("」", "", 1) if "」" in item and "「" not in item else item for item in inputLIST]
     inputLIST = [item.replace("「", "", 1) if "「" in item and "」" not in item else item for item in inputLIST]
+    inputLIST = [item.replace("、", "", 1) if item.startswith("、") else item for item in inputLIST]
     
     return inputLIST
 
@@ -32,8 +33,10 @@ def sinica_purger(i):
         for j in rawLIST:  
             purgeLIST = re.findall(r'{}'.format(regexLIST[i][1]), j) # 抽取含有標的詞彙的句子
             purgeLIST = [item.replace('\n', '') for item in purgeLIST] # 重新排列句子，處理句子被 "\n" 切開的情形
+            purgeLIST = rm_marks(purgeLIST)
             purge = '\n'.join(purgeLIST) # 重新整合句子，處理同時出現多個標的詞彙的情形
-            g.write(purge.replace("\t","").replace("\s","").replace(" ","")+"\n")            
+            purge = purge.replace("\t","").replace("\s","").replace(" ","")+"\n"
+            g.write(purge)            
             print("{}. {} ==> {}".format(lineCount, j, purge)) # 此處將顯示 {句數}. {raw 語料} ==> {取出部分}
             lineCount += 1
         
