@@ -28,9 +28,8 @@ def sinica_purger(i, targetSTR):
         pass    
     with open('../Corpus/raw/{}_sinica_raw.txt'.format(targetSTR),encoding="utf-8") as f: # 配合 sinica 格式將 raw 語料重新依 'more\n' 切分
         raw = ''.join(f.readlines())
-        rawSET = set()
         rawLIST = raw.split('more\n') 
-        rawLIST = [x for x in rawLIST if x not in rawSET and not rawSET.add(x)] # 移除相同之語料
+        rawLIST = list(OrderedDict.fromkeys(rawLIST)) # 移除相同之語料
     corpusLIST = [] 
     lineCount = 1 
     for j in rawLIST:  
