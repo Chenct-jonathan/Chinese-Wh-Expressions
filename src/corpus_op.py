@@ -46,7 +46,6 @@ def sinica_purger(i, targetSTR):
         print("\n"+'"{}"：Total {} lines.'.format(targetSTR, len(corpusLIST)))
         print("======================================================================================================")
         
-
 # 為了方便了解執行狀態，main() 中在執行 sinica_purger() 時，會同步顯示標的詞彙狀態。 
 def main(i):
     targetSTR =  regexLIST[i][0]
