@@ -23,7 +23,7 @@ def rm_marks(inputLIST):
 
 # 依 re 處理語料並寫入 _purged.txt 檔
 def sinica_purger(i, targetSTR):
-    print('Now Processing："{}"...'.format(targetSTR)+"\n")
+    print('*** Now Processing："{}"... ***'.format(targetSTR)+"\n")
     with open('../Corpus/purged/{}_sinica_purged.txt'.format(targetSTR), 'w') as g: # 新增空的 .txt 檔，若有相同檔案會將之清空
         pass    
     with open('../Corpus/raw/{}_sinica_raw.txt'.format(targetSTR),encoding="utf-8") as f: # 配合 sinica 格式將 raw 語料重新依 'more\n' 切分
