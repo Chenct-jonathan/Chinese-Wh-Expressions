@@ -1,0 +1,48 @@
+{
+    "language": "zh-tw",
+    "type": "advance",
+    "version": {
+        "atk": "v267",
+        "intent": "1.0"
+    },
+    "user_defined": {
+        "_asNoun": [
+            "奧會",
+            "久旺"
+        ]
+    },
+    "utterance": {
+        "誰知道": {
+            "id": "7c03d62c-20af-48a6-879b-17b23a32c022",
+            "pos": "<CLAUSE_WhoQ>誰</CLAUSE_WhoQ><ACTION_verb>知道</ACTION_verb>",
+            "lexy": [
+                "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(知道|得知|明知|深知|獲知|知悉|知情|知曉|知足|確知|了解)</(ACTION_verb|VerbP)>"
+            ],
+            "pattern": "<CLAUSE_WhoQ>誰</CLAUSE_WhoQ>(<FUNC_negation>不</FUNC_negation>)?<(ACTION_verb|VerbP)>(知道|知)</(ACTION_verb|VerbP)>"
+        },
+        "你寫給誰呢": {
+            "id": "9f802624-c6d3-4574-a84a-6c004dca0c62",
+            "pos": "<ENTITY_pronoun>你</ENTITY_pronoun><ACTION_verb>寫</ACTION_verb><ACTION_verb>給</ACTION_verb><CLAUSE_WhoQ>誰</CLAUSE_WhoQ><CLAUSE_particle>呢</CLAUSE_particle>",
+            "lexy": [
+                "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(寫|寫出|寫了|寫下|撰寫|書寫|寫成|寫字|寫完|寫著|編寫)</(ACTION_verb|VerbP)>",
+                "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(給|供給|帶給|提供|發放|資助|給對|分給|留給|交給|送給)</(ACTION_verb|VerbP)>"
+            ],
+            "pattern": "(<(ACTION_verb|VerbP)>[^<]+</(ACTION_verb|VerbP)>)*?<CLAUSE_WhoQ>誰</CLAUSE_WhoQ><CLAUSE_particle>呢</CLAUSE_particle>(<ENTITY_pronoun>[^<]+</ENTITY_pronoun>)?$"
+        },
+        "幸運者是誰": {
+            "id": "e5456f1f-5d45-4230-8417-f124a3c297c3",
+            "pos": "<ENTITY_nouny>幸運者</ENTITY_nouny><AUX>是</AUX><CLAUSE_WhoQ>誰</CLAUSE_WhoQ>",
+            "lexy": [],
+            "pattern": "<AUX>是</AUX><CLAUSE_WhoQ>[^<]+</CLAUSE_WhoQ>"
+        },
+        "誰是高人呢": {
+            "id": "0dbb6107-6d5d-4a39-ab06-113f3a480d63",
+            "pos": "<CLAUSE_WhoQ>誰</CLAUSE_WhoQ><AUX>是</AUX><ENTITY_nouny>高人</ENTITY_nouny><CLAUSE_particle>呢</CLAUSE_particle>",
+            "lexy": [],
+            "pattern": "<CLAUSE_WhoQ>誰</CLAUSE_WhoQ><AUX>[^<]+</AUX>"
+        }
+    },
+    "alias": {},
+    "prompt": {},
+    "document": []
+}
