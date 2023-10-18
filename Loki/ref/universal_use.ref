@@ -1,0 +1,37 @@
+{
+    "language": "zh-tw",
+    "type": "advance",
+    "version": {
+        "atk": "v267",
+        "intent": "1.0"
+    },
+    "user_defined": {
+        "_asNoun": [
+            "奧會"
+        ]
+    },
+    "utterance": {
+        "誰也不敢動": {
+            "id": "15067f8b-a5da-4990-bda8-ad391a7e88a0",
+            "pos": "<CLAUSE_WhoQ>誰</CLAUSE_WhoQ><MODIFIER>也</MODIFIER><FUNC_negation>不</FUNC_negation><ACTION_verb>敢</ACTION_verb><ACTION_verb>動</ACTION_verb>",
+            "lexy": [
+                "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(敢|敢做|敢為|願意|忍心|容|許|敢過|願|捨得|吝於)</(ACTION_verb|VerbP)>",
+                "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(動|動性|新動|溜放|動等|動亦|去產|大動|作動|驅動|費功)</(ACTION_verb|VerbP)>"
+            ],
+            "pattern": "<CLAUSE_WhoQ>誰</CLAUSE_WhoQ><MODIFIER>也</MODIFIER>((?<!</FUNC_negation>)<(ACTION_verb|VerbP)>[^<]+</(ACTION_verb|VerbP)>)?<FUNC_negation>[^<]+</FUNC_negation>"
+        },
+        "選誰來做都一樣可行": {
+            "id": "46bc1276-4b93-48d4-b992-071b8b7e023e",
+            "pos": "<ACTION_verb>選</ACTION_verb><CLAUSE_WhoQ>誰</CLAUSE_WhoQ><ACTION_verb>來</ACTION_verb><ACTION_verb>做</ACTION_verb><QUANTIFIER>都</QUANTIFIER><DegreeP>一樣可行</DegreeP>",
+            "lexy": [
+                "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(選|任選|挑選|遴選|選取|選定|選用|取捨|到選|選中|看選)</(ACTION_verb|VerbP)>",
+                "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(來|上來|下來|來到|前來|回來|進來|來語|端來|出來|值來)</(ACTION_verb|VerbP)>",
+                "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(做|作用|假作|假裝|冒充|創作|創造|喬裝|孕育|攝製|生出)</(ACTION_verb|VerbP)>"
+            ],
+            "pattern": "(<CLAUSE_WhoQ>誰</CLAUSE_WhoQ>|<ENTITY_oov>誰</ENTITY_oov>)(.+)?<QUANTIFIER>(都|皆)</QUANTIFIER>"
+        }
+    },
+    "alias": {},
+    "prompt": {},
+    "document": []
+}
