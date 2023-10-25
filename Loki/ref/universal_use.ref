@@ -7,10 +7,19 @@
     },
     "user_defined": {
         "_asNoun": [
-            "奧會"
+            "奧會",
+            "久旺"
         ]
     },
     "utterance": {
+        "無論誰當權": {
+            "id": "4750d2ab-e478-4ae2-a878-1a30775f4422",
+            "pos": "<MODIFIER>無論</MODIFIER><CLAUSE_WhoQ>誰</CLAUSE_WhoQ><ACTION_verb>當權</ACTION_verb>",
+            "lexy": [
+                "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(當權|疑歐|攘夷|當政|掌權|得勢|急進|失勢|專擅|亂政)</(ACTION_verb|VerbP)>"
+            ],
+            "pattern": "(<FUNC_inter>不論</FUNC_inter>|<MODIFIER>無論</MODIFIER>)<CLAUSE_WhoQ>誰</CLAUSE_WhoQ>"
+        },
         "誰也不敢動": {
             "id": "15067f8b-a5da-4990-bda8-ad391a7e88a0",
             "pos": "<CLAUSE_WhoQ>誰</CLAUSE_WhoQ><MODIFIER>也</MODIFIER><FUNC_negation>不</FUNC_negation><ACTION_verb>敢</ACTION_verb><ACTION_verb>動</ACTION_verb>",
