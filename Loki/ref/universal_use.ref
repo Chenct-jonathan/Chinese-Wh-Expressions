@@ -7,8 +7,8 @@
     },
     "user_defined": {
         "_asNoun": [
-            "奧會",
-            "久旺"
+            "久旺",
+            "奧會"
         ]
     },
     "utterance": {
@@ -29,6 +29,15 @@
             ],
             "pattern": "<CLAUSE_WhoQ>誰</CLAUSE_WhoQ><MODIFIER>也</MODIFIER>((?<!</FUNC_negation>)<(ACTION_verb|VerbP)>[^<]+</(ACTION_verb|VerbP)>)?<FUNC_negation>[^<]+</FUNC_negation>"
         },
+        "誰再出聲便處分誰": {
+            "id": "5eca3695-2372-45be-a8c1-1e7045b43e10",
+            "pos": "<CLAUSE_WhoQ>誰</CLAUSE_WhoQ><MODIFIER>再</MODIFIER><ACTION_verb>出聲</ACTION_verb><MODAL>便</MODAL><ACTION_verb>處分</ACTION_verb><CLAUSE_WhoQ>誰</CLAUSE_WhoQ>",
+            "lexy": [
+                "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(出聲|吭聲|發聲|聲明|亂說|亂講|交談|作出|做出|叨嘮|商量)</(ACTION_verb|VerbP)>",
+                "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(處分|懲處|處治|處理|處置|處罰|制裁|懲治|懲罰|懲辦|教養)</(ACTION_verb|VerbP)>"
+            ],
+            "pattern": "<CLAUSE_WhoQ>誰</CLAUSE_WhoQ>(.+)?(<MODAL>便</MODAL>|<FUNC_in(ner|ter)>就</FUNC_in(ner|ter)>)(<ACTION_verb>[^<]+</ACTION_verb>|<ACTION_lightVerb>[^<]+</ACTION_lightVerb>)*<CLAUSE_WhoQ>誰</CLAUSE_WhoQ>"
+        },
         "選誰來做都一樣可行": {
             "id": "46bc1276-4b93-48d4-b992-071b8b7e023e",
             "pos": "<ACTION_verb>選</ACTION_verb><CLAUSE_WhoQ>誰</CLAUSE_WhoQ><ACTION_verb>來</ACTION_verb><ACTION_verb>做</ACTION_verb><QUANTIFIER>都</QUANTIFIER><DegreeP>一樣可行</DegreeP>",
@@ -38,6 +47,23 @@
                 "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(做|作用|假作|假裝|冒充|創作|創造|喬裝|孕育|攝製|生出)</(ACTION_verb|VerbP)>"
             ],
             "pattern": "(<CLAUSE_WhoQ>誰</CLAUSE_WhoQ>|<ENTITY_oov>誰</ENTITY_oov>)(.+)?<QUANTIFIER>(都|皆)</QUANTIFIER>"
+        },
+        "誰做好公民誰就是傻瓜": {
+            "id": "4efb6ea0-e198-41af-84a0-a7d8d375f674",
+            "pos": "<CLAUSE_WhoQ>誰</CLAUSE_WhoQ><ACTION_verb>做</ACTION_verb><ENTITY_nouny>好公民</ENTITY_nouny><CLAUSE_WhoQ>誰</CLAUSE_WhoQ><AUX>就是</AUX><ENTITY_nouny>傻瓜</ENTITY_nouny>",
+            "lexy": [
+                "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(做|作用|假作|假裝|冒充|創作|創造|喬裝|孕育|攝製|生出)</(ACTION_verb|VerbP)>"
+            ],
+            "pattern": "<CLAUSE_WhoQ>誰</CLAUSE_WhoQ>(.+)?<CLAUSE_WhoQ>誰</CLAUSE_WhoQ>(<MODAL>便</MODAL>)?<AUX>(就是|是)</AUX>"
+        },
+        "誰打破了這個平衡誰就輸": {
+            "id": "6c7ea7dd-8796-441b-be48-0eae375de11c",
+            "pos": "<CLAUSE_WhoQ>誰</CLAUSE_WhoQ><VerbP>打破了</VerbP><ENTITY_DetPhrase>這個</ENTITY_DetPhrase><ENTITY_nouny>平衡</ENTITY_nouny><CLAUSE_WhoQ>誰</CLAUSE_WhoQ><FUNC_inner>就</FUNC_inner><ACTION_verb>輸</ACTION_verb>",
+            "lexy": [
+                "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(打破了|扯破|破壞|破碎|破裂|砸破|突破|截斷|打斷|扣殺|折斷)</(ACTION_verb|VerbP)>",
+                "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(輸|贏|輸給|有輸|有贏|輸了|贏過|吃虧|認輸|忌口|算輸)</(ACTION_verb|VerbP)>"
+            ],
+            "pattern": "<CLAUSE_WhoQ>誰</CLAUSE_WhoQ>(.+)?<CLAUSE_WhoQ>誰</CLAUSE_WhoQ><FUNC_in(ner|ter)>就</FUNC_in(ner|ter)>"
         }
     },
     "alias": {},
