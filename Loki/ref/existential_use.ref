@@ -7,11 +7,17 @@
     },
     "user_defined": {
         "_asNoun": [
-            "奧會",
-            "久旺"
+            "久旺",
+            "奧會"
         ]
     },
     "utterance": {
+        "那個誰呀": {
+            "id": "2fe3cf0c-350c-48c5-9e5f-35c3b0b46432",
+            "pos": "<ENTITY_DetPhrase>那個</ENTITY_DetPhrase><CLAUSE_WhoQ>誰</CLAUSE_WhoQ><CLAUSE_particle>呀</CLAUSE_particle>",
+            "lexy": [],
+            "pattern": "(<ENTITY_DetPhrase>[^<]+</ENTITY_DetPhrase>|<FUNC_determiner>[^<]+</FUNC_determiner>)<CLAUSE_WhoQ>誰</CLAUSE_WhoQ>"
+        },
         "誰也不服誰": {
             "id": "7185fe6d-a6f7-4b64-a5dd-8c1598303209",
             "pos": "<CLAUSE_WhoQ>誰</CLAUSE_WhoQ><MODIFIER>也</MODIFIER><FUNC_negation>不</FUNC_negation><ACTION_verb>服</ACTION_verb><CLAUSE_WhoQ>誰</CLAUSE_WhoQ>",
@@ -19,6 +25,30 @@
                 "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(服|常服|服等|抵死|喪服|服到|裝束|制服|朝服|服正|服來)</(ACTION_verb|VerbP)>"
             ],
             "pattern": "<MODIFIER>也</MODIFIER><FUNC_negation>[^<]+</FUNC_negation><(ACTION_verb|VerbP)>[^<]+</(ACTION_verb|VerbP)><CLAUSE_WhoQ>誰</CLAUSE_WhoQ>"
+        },
+        "或者說誰誰誰不好": {
+            "id": "56c2a118-e184-4453-8c9b-7dc2ed560b14",
+            "pos": "<FUNC_conjunction>或者</FUNC_conjunction><ACTION_verb>說</ACTION_verb><CLAUSE_WhoQ>誰</CLAUSE_WhoQ><CLAUSE_WhoQ>誰</CLAUSE_WhoQ><CLAUSE_WhoQ>誰</CLAUSE_WhoQ><FUNC_negation>不</FUNC_negation><MODIFIER>好</MODIFIER>",
+            "lexy": [
+                "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(說|演說|說話|宣判|拼讀|談到|辯護|說過|說到|講出|說著)</(ACTION_verb|VerbP)>"
+            ],
+            "pattern": "<(ACTION_verb|VerbP)>[^<]+</(ACTION_verb|VerbP)>(<CLAUSE_WhoQ>誰</CLAUSE_WhoQ>)*"
+        },
+        "所以我記得是誰呀": {
+            "id": "040e4da4-472b-45f8-96da-a730ae409a46",
+            "pos": "<FUNC_inter>所以</FUNC_inter><ENTITY_pronoun>我</ENTITY_pronoun><ACTION_verb>記得</ACTION_verb><AUX>是</AUX><CLAUSE_WhoQ>誰</CLAUSE_WhoQ><CLAUSE_particle>呀</CLAUSE_particle>",
+            "lexy": [
+                "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(記得|懂得|曉得|死記|熟記|牢記|記住|認得|謹記|識得|了解)</(ACTION_verb|VerbP)>"
+            ],
+            "pattern": "<(ACTION_verb|VerbP)>[^<]+</(ACTION_verb|VerbP)><AUX>[^<]+</AUX><CLAUSE_WhoQ>誰</CLAUSE_WhoQ>"
+        },
+        "知道誰和誰關係如何": {
+            "id": "fc67d677-d5f8-4876-81e6-6b024127a9fb",
+            "pos": "<ACTION_verb>知道</ACTION_verb><CLAUSE_WhoQ>誰</CLAUSE_WhoQ><FUNC_conjunction>和</FUNC_conjunction><CLAUSE_WhoQ>誰</CLAUSE_WhoQ><ENTITY_noun>關係</ENTITY_noun><CLAUSE_WhatQ>如何</CLAUSE_WhatQ>",
+            "lexy": [
+                "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(知道|得知|明知|深知|獲知|知悉|知情|知曉|知足|確知|了解)</(ACTION_verb|VerbP)>"
+            ],
+            "pattern": "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>[^<]+</(ACTION_verb|VerbP)><CLAUSE_WhoQ>誰</CLAUSE_WhoQ><FUNC_conjunction>[^<]+</FUNC_conjunction><CLAUSE_WhoQ>誰</CLAUSE_WhoQ><(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>[^<]+</(UserDefined|ENTITY_(nounHead|nouny|noun|oov))><CLAUSE_WhatQ>[^<]+</CLAUSE_WhatQ>"
         },
         "有一篇文章我不記得是誰寫的": {
             "id": "b30e3463-258c-4fb4-8108-e07b15bc2ccd",
