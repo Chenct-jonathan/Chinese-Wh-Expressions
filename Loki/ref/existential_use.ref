@@ -12774,6 +12774,14 @@
             ],
             "pattern": "(<CLAUSE_WhoQ>誰</CLAUSE_WhoQ>){3}"
         },
+        "所以我記得是誰呀": {
+            "id": "df4c37c5-acc5-4fa4-abe4-1fb6b6d934ba",
+            "pos": "<FUNC_inter>所以</FUNC_inter><ENTITY_pronoun>我</ENTITY_pronoun><ACTION_verb>記得</ACTION_verb><AUX>是</AUX><CLAUSE_WhoQ>誰</CLAUSE_WhoQ><CLAUSE_particle>呀</CLAUSE_particle>",
+            "lexy": [
+                "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(記得|懂得|曉得|死記|熟記|牢記|記住|認得|謹記|識得|了解)</(ACTION_verb|VerbP)>"
+            ],
+            "pattern": "<(ACTION_verb|VerbP)>[^<]+</(ACTION_verb|VerbP)>(<AUX>是</AUX>)?(<ENTITY_DetPhrase>那個</ENTITY_DetPhrase>|<FUNC_determiner>那</FUNC_determiner>)?<CLAUSE_WhoQ>誰</CLAUSE_WhoQ>(<FUNC_inner>的</FUNC_inner><(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>[^<]+</(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>)?(<CLAUSE_particle>呀</CLAUSE_particle>)"
+        },
         "可曾看到有誰去辦誰": {
             "id": "1b22f642-fa0d-42b0-b0a7-e240a5f370c2",
             "pos": "<MODAL>可</MODAL><ASPECT>曾</ASPECT><ACTION_verb>看到</ACTION_verb><ACTION_verb>有</ACTION_verb><CLAUSE_WhoQ>誰</CLAUSE_WhoQ><ACTION_verb>去</ACTION_verb><ACTION_verb>辦</ACTION_verb><CLAUSE_WhoQ>誰</CLAUSE_WhoQ>",
