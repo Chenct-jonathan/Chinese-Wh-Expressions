@@ -51,11 +51,14 @@ def getResponse(utterance, args):
 def getResult(inputSTR, utterance, args, resultDICT, refDICT):
     debugInfo(inputSTR, utterance)
     resultDICT["interrogative"] = []
+    if 'intent' not in resultDICT.keys():
+        resultDICT["intent"] = []    
     if utterance == "你寫給誰呢":
         if CHATBOT_MODE:
             resultDICT["response"] = getResponse(utterance, args)
         else:
             resultDICT["interrogative"].append("你寫給誰呢")
+            resultDICT["intent"].append("a")
 
 
     if utterance == "幸運者是誰":
@@ -63,41 +66,48 @@ def getResult(inputSTR, utterance, args, resultDICT, refDICT):
             resultDICT["response"] = getResponse(utterance, args)
         else:
             resultDICT["interrogative"].append("幸運者是誰")
+            resultDICT["intent"].append("a")
 
     if utterance == "未來又由誰來決定接班的人呢":
         if CHATBOT_MODE:
             resultDICT["response"] = getResponse(utterance, args)
         else:
             resultDICT["interrogative"].append("未來又由誰來決定接班的人呢")
+            resultDICT["intent"].append("a")
 
     if utterance == "看誰能給得更多":
         if CHATBOT_MODE:
             resultDICT["response"] = getResponse(utterance, args)
         else:
             resultDICT["interrogative"].append("看誰能給得更多")
+            resultDICT["intent"].append("a")
 
     if utterance == "票投給誰只有天知、地知、我知":
         if CHATBOT_MODE:
             resultDICT["response"] = getResponse(utterance, args)
         else:
             resultDICT["interrogative"].append("票投給誰只有天知、地知、我知")
+            resultDICT["intent"].append("a")
 
     if utterance == "誰是高人呢":
         if CHATBOT_MODE:
             resultDICT["response"] = getResponse(utterance, args)
         else:
             resultDICT["interrogative"].append("誰是高人呢")
+            resultDICT["intent"].append("a")
 
     if utterance == "還有誰會來買本國的產品":
         if CHATBOT_MODE:
             resultDICT["response"] = getResponse(utterance, args)
         else:
             resultDICT["interrogative"].append("還有誰會來買本國的產品")
+            resultDICT["intent"].append("a")
 
     if utterance == "那這樣你怎麼知道誰在愛你":
         if CHATBOT_MODE:
             resultDICT["response"] = getResponse(utterance, args)
         else:
             resultDICT["interrogative"].append("那這樣你怎麼知道誰在愛你")
+            resultDICT["intent"].append("a")
 
     return resultDICT

@@ -51,46 +51,55 @@ def getResponse(utterance, args):
 def getResult(inputSTR, utterance, args, resultDICT, refDICT):
     debugInfo(inputSTR, utterance)
     resultDICT["universal"] = []
+    if 'intent' not in resultDICT.keys():
+        resultDICT["intent"] = []    
     if utterance == "無論誰當權":
         if CHATBOT_MODE:
             resultDICT["response"] = getResponse(utterance, args)
         else:
             resultDICT["universal"].append("無論誰當權")
+            resultDICT["intent"].append("c")
 
     if utterance == "誰也不敢動":
         if CHATBOT_MODE:
             resultDICT["response"] = getResponse(utterance, args)
         else:
             resultDICT["universal"].append("誰也不敢動")
+            resultDICT["intent"].append("c")
 
     if utterance == "誰也說不上來":
         if CHATBOT_MODE:
             resultDICT["response"] = getResponse(utterance, args)
         else:
             resultDICT["universal"].append("誰也說不上來")
+            resultDICT["intent"].append("c")
 
     if utterance == "誰做好公民誰就是傻瓜":
         if CHATBOT_MODE:
             resultDICT["response"] = getResponse(utterance, args)
         else:
             resultDICT["universal"].append("誰做好公民誰就是傻瓜")
+            resultDICT["intent"].append("c")
 
     if utterance == "誰再出聲便處分誰":
         if CHATBOT_MODE:
             resultDICT["response"] = getResponse(utterance, args)
         else:
             resultDICT["universal"].append("誰再出聲便處分誰")
+            resultDICT["intent"].append("c")
 
     if utterance == "誰打破了這個平衡誰就輸":
         if CHATBOT_MODE:
             resultDICT["response"] = getResponse(utterance, args)
         else:
             resultDICT["universal"].append("誰打破了這個平衡誰就輸")
+            resultDICT["intent"].append("c")
 
     if utterance == "選誰來做都一樣可行":
         if CHATBOT_MODE:
             resultDICT["response"] = getResponse(utterance, args)
         else:
             resultDICT["universal"].append("選誰來做都一樣可行")
+            resultDICT["intent"].append("c")
 
     return resultDICT
