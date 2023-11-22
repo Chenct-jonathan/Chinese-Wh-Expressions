@@ -25,7 +25,7 @@
             "id": "e5456f1f-5d45-4230-8417-f124a3c297c3",
             "pos": "<ENTITY_nouny>幸運者</ENTITY_nouny><AUX>是</AUX><CLAUSE_WhoQ>誰</CLAUSE_WhoQ>",
             "lexy": [],
-            "pattern": "<(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>[^<]+</(UserDefined|ENTITY_(nounHead|nouny|noun|oov))><AUX>是</AUX><CLAUSE_WhoQ>[^<]+</CLAUSE_WhoQ>(?<!</都)"
+            "pattern": "<(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>[^<]+</(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>(<QUANTIFIER>都</QUANTIFIER>)?<AUX>是</AUX><CLAUSE_WhoQ>[^<]+</CLAUSE_WhoQ>(?<!<QUANTIFIER>都)"
         },
         "誰是高人呢": {
             "id": "0dbb6107-6d5d-4a39-ab06-113f3a480d63",
@@ -77,7 +77,7 @@
                 "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(投給|投給了|選出來|換掉|大贏|投下去|讓給|想投|幹掉|當選了|當選)</(ACTION_verb|VerbP)>",
                 "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(知|明知|深知|知悉|知情|知曉|知足|知道|確知|了解|懂得)</(ACTION_verb|VerbP)>"
             ],
-            "pattern": "<(ACTION_verb|VerbP)>[^<]+</(ACTION_verb|VerbP)><CLAUSE_WhoQ>誰</CLAUSE_WhoQ>(?<!</都)"
+            "pattern": "(<QUANTIFIER>都</QUANTIFIER>)?<(ACTION_verb|VerbP)>[^<]+</(ACTION_verb|VerbP)><CLAUSE_WhoQ>誰</CLAUSE_WhoQ>(?<!</都)"
         }
     },
     "alias": {},
