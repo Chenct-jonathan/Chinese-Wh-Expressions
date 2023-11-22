@@ -58,27 +58,27 @@ def getResult(inputSTR, utterance, args, resultDICT, refDICT):
             resultDICT["response"] = getResponse(utterance, args)
         else:
             resultDICT["existential"].append("可曾看到有誰去辦誰")
-            resultDICT["intent"].append("b")
+            resultDICT["intent"].append("b2")
     
     if utterance == "或者說誰誰誰不好":
         if CHATBOT_MODE:
             resultDICT["response"] = getResponse(utterance, args)
         else:
             resultDICT["existential"].append("或者說誰誰誰不好")
-            resultDICT["intent"].append("b")
+            resultDICT["intent"].append("b4")
 
     if utterance == "所以我記得是誰呀":
         if CHATBOT_MODE:
             resultDICT["response"] = getResponse(utterance, args)
         else:
             resultDICT["existential"].append("所以我記得是誰呀")
-            resultDICT["intent"].append("b")
+            resultDICT["intent"].append("b3")
 
     if utterance == "那個誰呀":
         if CHATBOT_MODE:
             resultDICT["response"] = getResponse(utterance, args)
         else:
             resultDICT["existential"].append("那個誰呀")
-            resultDICT["intent"].append("b")
+            resultDICT["intent"].append("b1")
 
     return resultDICT

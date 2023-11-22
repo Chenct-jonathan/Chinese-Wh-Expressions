@@ -292,13 +292,13 @@ def testIntent():
 
 
 if __name__ == "__main__":
-    begin = 1
+    begin = 0
     end = 201
     with open("../../Corpus/purged/shei_sinica_purged.txt", "r", encoding="utf-8") as f:
         testLIST = f.readlines()
         
-    with open("../../log/log_1116", "w", encoding='utf-8') as log:
-        for i, inputSTR in enumerate(testLIST[begin:end], start=begin):
+    with open("../../log/log_1122", "w", encoding='utf-8') as log:
+        for i, inputSTR in enumerate(testLIST[begin:end], start=begin+1):
             resultDICT = execLoki(inputSTR)
             if 'intent' in resultDICT.keys():
                 log.write(f"{i}. {resultDICT['intent']}\n")
