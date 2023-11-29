@@ -70,7 +70,7 @@
                 "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(打破了|扯破|破壞|破碎|破裂|砸破|突破|截斷|打斷|扣殺|折斷)</(ACTION_verb|VerbP)>",
                 "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(輸|贏|輸給|有輸|有贏|輸了|贏過|吃虧|認輸|忌口|算輸)</(ACTION_verb|VerbP)>"
             ],
-            "pattern": "<CLAUSE_WhoQ>誰</CLAUSE_WhoQ>(.+)?<CLAUSE_WhoQ>誰</CLAUSE_WhoQ>(<FUNC_in(ner|ter)>就</FUNC_in(ner|ter)>)?<(ACTION_verb|VerbP)>[^<]+</(ACTION_verb|VerbP)>"
+            "pattern": "<CLAUSE_WhoQ>誰</CLAUSE_WhoQ>(?!<FUNC_conjunction>)(.+)?<CLAUSE_WhoQ>誰</CLAUSE_WhoQ>(<FUNC_in(ner|ter)>就</FUNC_in(ner|ter)>)?<(ACTION_verb|VerbP)>[^<]+</(ACTION_verb|VerbP)>"
         }
     },
     "alias": {},
