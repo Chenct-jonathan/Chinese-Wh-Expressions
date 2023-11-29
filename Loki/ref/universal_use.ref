@@ -8,7 +8,8 @@
     "user_defined": {
         "_asNoun": [
             "久旺",
-            "奧會"
+            "奧會",
+            "詩"
         ]
     },
     "utterance": {
@@ -52,7 +53,7 @@
                 "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(來|上來|下來|來到|前來|回來|進來|來語|端來|出來|值來)</(ACTION_verb|VerbP)>",
                 "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(做|作用|假作|假裝|冒充|創作|創造|喬裝|孕育|攝製|生出)</(ACTION_verb|VerbP)>"
             ],
-            "pattern": "(<CLAUSE_WhoQ>誰</CLAUSE_WhoQ>|<ENTITY_oov>誰</ENTITY_oov>|<ENTITY_nounHead>誰</ENTITY_nounHead>)(.+)?<QUANTIFIER>(都|皆)</QUANTIFIER>"
+            "pattern": "(<CLAUSE_WhoQ>誰</CLAUSE_WhoQ>|<ENTITY_oov>誰</ENTITY_oov>|<ENTITY_nounHead>誰</ENTITY_nounHead>|<ENTITY_nouny>誰</ENTITY_nouny>)(.+)?<QUANTIFIER>(都|皆)</QUANTIFIER>"
         },
         "誰做好公民誰就是傻瓜": {
             "id": "4efb6ea0-e198-41af-84a0-a7d8d375f674",

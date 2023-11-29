@@ -59,7 +59,7 @@ def getResult(inputSTR, utterance, args, resultDICT, refDICT):
         else:
             resultDICT["interrogative"].append("你寫給誰呢")
             resultDICT["intent"].append("a1")
-
+            resultDICT["intent"] = [item for item in resultDICT["intent"] if "c" not in item]
 
     if utterance == "幸運者是誰":
         if CHATBOT_MODE:
@@ -73,7 +73,8 @@ def getResult(inputSTR, utterance, args, resultDICT, refDICT):
             resultDICT["response"] = getResponse(utterance, args)
         else:
             resultDICT["interrogative"].append("未來又由誰來決定接班的人呢")
-            resultDICT["intent"].append("a3")
+            if 'c3' not in resultDICT["intent"]:
+                resultDICT["intent"].append("a3")
 
     if utterance == "看誰能給得更多":
         if CHATBOT_MODE:
@@ -102,6 +103,7 @@ def getResult(inputSTR, utterance, args, resultDICT, refDICT):
         else:
             resultDICT["interrogative"].append("還有誰會來買本國的產品")
             resultDICT["intent"].append("a5")
+            resultDICT["intent"] = [item for item in resultDICT["intent"] if "c" not in item]
 
     if utterance == "那這樣你怎麼知道誰在愛你":
         if CHATBOT_MODE:

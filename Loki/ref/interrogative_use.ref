@@ -8,7 +8,8 @@
     "user_defined": {
         "_asNoun": [
             "久旺",
-            "奧會"
+            "奧會",
+            "詩"
         ]
     },
     "utterance": {
@@ -19,19 +20,19 @@
                 "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(寫|寫出|寫了|寫下|撰寫|書寫|寫成|寫字|寫完|寫著|編寫)</(ACTION_verb|VerbP)>",
                 "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(給|供給|帶給|提供|發放|資助|給對|分給|留給|交給|送給)</(ACTION_verb|VerbP)>"
             ],
-            "pattern": "<CLAUSE_WhoQ>誰</CLAUSE_WhoQ><CLAUSE_particle>[^<嗎]+</CLAUSE_particle>"
+            "pattern": "<CLAUSE_WhoQ>誰</CLAUSE_WhoQ>(.+)?<CLAUSE_particle>[^<嗎]+</CLAUSE_particle>"
         },
         "幸運者是誰": {
             "id": "e5456f1f-5d45-4230-8417-f124a3c297c3",
             "pos": "<ENTITY_nouny>幸運者</ENTITY_nouny><AUX>是</AUX><CLAUSE_WhoQ>誰</CLAUSE_WhoQ>",
             "lexy": [],
-            "pattern": "<(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>[^<]+</(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>(<QUANTIFIER>都</QUANTIFIER>)?<AUX>是</AUX><CLAUSE_WhoQ>[^<]+</CLAUSE_WhoQ>(?<!<QUANTIFIER>都)"
+            "pattern": "<AUX>是</AUX><CLAUSE_WhoQ>[^<]+</CLAUSE_WhoQ>"
         },
         "誰是高人呢": {
             "id": "0dbb6107-6d5d-4a39-ab06-113f3a480d63",
             "pos": "<CLAUSE_WhoQ>誰</CLAUSE_WhoQ><AUX>是</AUX><ENTITY_nouny>高人</ENTITY_nouny><CLAUSE_particle>呢</CLAUSE_particle>",
             "lexy": [],
-            "pattern": "<CLAUSE_WhoQ>誰</CLAUSE_WhoQ>(?<!</都)<AUX>[^<]+</AUX>"
+            "pattern": "<CLAUSE_WhoQ>誰</CLAUSE_WhoQ><AUX>[^<就]+</AUX>"
         },
         "看誰能給得更多": {
             "id": "f36ab4e6-69e1-474d-b85e-cc5f75ccf96d",
@@ -40,7 +41,7 @@
                 "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(看|探看|收看|看守|看戲|看望|看護|看顧|觀看|光顧|探望)</(ACTION_verb|VerbP)>",
                 "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(給|供給|帶給|提供|發放|資助|給對|分給|留給|交給|送給)</(ACTION_verb|VerbP)>"
             ],
-            "pattern": "<CLAUSE_WhoQ>誰</CLAUSE_WhoQ>(?<!</都)<MODAL>[^<]+</MODAL>"
+            "pattern": "<CLAUSE_WhoQ>誰</CLAUSE_WhoQ><MODAL>[^<]+</MODAL>"
         },
         "還有誰會來買本國的產品": {
             "id": "8b443d12-5092-4558-8790-bf799b665843",
@@ -49,7 +50,7 @@
                 "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(來|上來|下來|來到|前來|回來|進來|來語|端來|出來|值來)</(ACTION_verb|VerbP)>",
                 "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(買|採買|收買|買進|購買|採辦|購得|買到|買不到|買東西|吃)</(ACTION_verb|VerbP)>"
             ],
-            "pattern": "<FUNC_conjunction>還有</FUNC_conjunction><CLAUSE_WhoQ>誰</CLAUSE_WhoQ>"
+            "pattern": "<FUNC_conjunction>還有</FUNC_conjunction>(<ENTITY_nouny>誰</ENTITY_nouny>|<CLAUSE_WhoQ>誰</CLAUSE_WhoQ>)"
         },
         "那這樣你怎麼知道誰在愛你": {
             "id": "062f6c47-0a46-4c13-bec6-d6844ea13e25",
@@ -58,7 +59,7 @@
                 "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(知道|得知|明知|深知|獲知|知悉|知情|知曉|知足|確知|了解)</(ACTION_verb|VerbP)>",
                 "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(愛|喜愛|愛好|愛憎|愛戴|愛護|愛過|憐愛|深愛|熱愛|疼愛)</(ACTION_verb|VerbP)>"
             ],
-            "pattern": "<CLAUSE_WhoQ>誰</CLAUSE_WhoQ>(?<!</都)<ASPECT>在</ASPECT><(ACTION_verb|VerbP)>[^<]+</(ACTION_verb|VerbP)>"
+            "pattern": "<CLAUSE_WhoQ>誰</CLAUSE_WhoQ><ASPECT>在</ASPECT><(ACTION_verb|VerbP)>[^<]+</(ACTION_verb|VerbP)>"
         },
         "未來又由誰來決定接班的人呢": {
             "id": "0f32411d-2e2d-4cef-9bc2-055f9f170757",
@@ -68,7 +69,7 @@
                 "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(決定|判定|商定|敲定|斷定|決策|約定|解決|談定|酌定|判斷)</(ACTION_verb|VerbP)>",
                 "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(接班|接下|接下來|接住|接到|接受|接手|接掌|接收|接替|接案)</(ACTION_verb|VerbP)>"
             ],
-            "pattern": "<CLAUSE_WhoQ>誰</CLAUSE_WhoQ>(?<!</都)(<(ACTION_verb|VerbP)>[^<]+</(ACTION_verb|VerbP)>)+?"
+            "pattern": "<CLAUSE_WhoQ>誰</CLAUSE_WhoQ>(<(ACTION_verb|VerbP)>[^<]+</(ACTION_verb|VerbP)>)+?"
         },
         "票投給誰只有天知、地知、我知": {
             "id": "4d74ffd0-0efc-4f88-87e1-7847b5689b76",
@@ -77,7 +78,7 @@
                 "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(投給|投給了|選出來|換掉|大贏|投下去|讓給|想投|幹掉|當選了|當選)</(ACTION_verb|VerbP)>",
                 "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(知|明知|深知|知悉|知情|知曉|知足|知道|確知|了解|懂得)</(ACTION_verb|VerbP)>"
             ],
-            "pattern": "(<QUANTIFIER>都</QUANTIFIER>)?<(ACTION_verb|VerbP)>[^<]+</(ACTION_verb|VerbP)><CLAUSE_WhoQ>誰</CLAUSE_WhoQ>(?<!</都)"
+            "pattern": "(<QUANTIFIER>都</QUANTIFIER>)?<(ACTION_verb|VerbP)>[^<]+</(ACTION_verb|VerbP)><CLAUSE_WhoQ>誰</CLAUSE_WhoQ>"
         }
     },
     "alias": {},
