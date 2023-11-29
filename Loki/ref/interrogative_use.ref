@@ -34,6 +34,14 @@
             "lexy": [],
             "pattern": "<CLAUSE_WhoQ>誰</CLAUSE_WhoQ><AUX>[^<就]+</AUX>"
         },
+        "誰跟誰求婚": {
+            "id": "75ebeabb-52d7-4169-9390-924a572a48d3",
+            "pos": "<CLAUSE_WhoQ>誰</CLAUSE_WhoQ><FUNC_conjunction>跟</FUNC_conjunction><CLAUSE_WhoQ>誰</CLAUSE_WhoQ><ACTION_verb>求婚</ACTION_verb>",
+            "lexy": [
+                "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(求婚|提婚|倡導|提出|告白|提親|求愛|表白|搭訕|討教|道謝)</(ACTION_verb|VerbP)>"
+            ],
+            "pattern": "<CLAUSE_WhoQ>誰</CLAUSE_WhoQ><FUNC_conjunction>[^<]+</FUNC_conjunction><CLAUSE_WhoQ>誰</CLAUSE_WhoQ>"
+        },
         "看誰能給得更多": {
             "id": "f36ab4e6-69e1-474d-b85e-cc5f75ccf96d",
             "pos": "<ACTION_verb>看</ACTION_verb><CLAUSE_WhoQ>誰</CLAUSE_WhoQ><MODAL>能</MODAL><ACTION_verb>給</ACTION_verb><FUNC_inner>得</FUNC_inner><DegreeP>更多</DegreeP>",

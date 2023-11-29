@@ -111,5 +111,13 @@ def getResult(inputSTR, utterance, args, resultDICT, refDICT):
         else:
             resultDICT["interrogative"].append("那這樣你怎麼知道誰在愛你")
             resultDICT["intent"].append("a7")
+            
+    if utterance == "誰跟誰求婚":
+        if CHATBOT_MODE:
+            resultDICT["response"] = getResponse(utterance, args)
+        else:
+            resultDICT["interrogative"].append("誰跟誰求婚")
+            resultDICT["intent"].append("a9")
+            resultDICT["intent"] = [item for item in resultDICT["intent"] if "c" not in item]
 
     return resultDICT
