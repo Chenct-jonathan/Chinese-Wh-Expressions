@@ -68,7 +68,7 @@ def getResult(inputSTR, utterance, args, resultDICT, refDICT):
             resultDICT["interrogative"].append("幸運者是誰")
             resultDICT["intent"].append("a4")
 
-    if utterance == "未來又由誰來決定接班的人呢":
+    if utterance == "未來又由誰來決定接班的人呢": #
         if CHATBOT_MODE:
             resultDICT["response"] = getResponse(utterance, args)
         else:
@@ -119,5 +119,45 @@ def getResult(inputSTR, utterance, args, resultDICT, refDICT):
             resultDICT["interrogative"].append("誰跟誰求婚")
             resultDICT["intent"].append("a9")
             resultDICT["intent"] = [item for item in resultDICT["intent"] if "c" not in item]
+            
+    if utterance == "要不然誰把你Ｆｉｒｅ": #
+        if CHATBOT_MODE:
+            resultDICT["response"] = getResponse(utterance, args)
+        else:
+            resultDICT["interrogative"].append("要不然誰把你Ｆｉｒｅ")
+            resultDICT["intent"].append("a10")
+            resultDICT["intent"] = [item for item in resultDICT["intent"] if "c" not in item]
+            
+    if utterance == "誰狠心":
+        if CHATBOT_MODE:
+            resultDICT["response"] = getResponse(utterance, args)
+        else:
+            resultDICT["interrogative"].append("誰狠心")
+            resultDICT["intent"].append("a11")
+            resultDICT["intent"] = [item for item in resultDICT["intent"] if "c" not in item]
+            
+    if utterance == "究竟是其中誰的貢獻了":
+        if CHATBOT_MODE:
+            resultDICT["response"] = getResponse(utterance, args)
+        else:
+            resultDICT["interrogative"].append("究竟是其中誰的貢獻了")
+            resultDICT["intent"].append("a12")
+            resultDICT["intent"] = [item for item in resultDICT["intent"] if "c" not in item]
+            
+    if utterance == "誰不要臉":
+        if CHATBOT_MODE:
+            resultDICT["response"] = getResponse(utterance, args)
+        else:
+            resultDICT["interrogative"].append("誰不要臉")
+            resultDICT["intent"].append("a13")
+            resultDICT["intent"] = [item for item in resultDICT["intent"] if "c" not in item]
+            
+    if utterance == "我們誰又不是邁向歸途":
+        if CHATBOT_MODE:
+            resultDICT["response"] = getResponse(utterance, args)
+        else:
+            resultDICT["interrogative"].append("我們誰又不是邁向歸途")
+            resultDICT["intent"].append("a14")
+            resultDICT["intent"] = [item for item in resultDICT["intent"] if "c" not in item]        
 
     return resultDICT

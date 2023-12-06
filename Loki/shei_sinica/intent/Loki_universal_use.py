@@ -115,5 +115,34 @@ def getResult(inputSTR, utterance, args, resultDICT, refDICT):
             if 'a1' not in resultDICT["intent"] and 'a5' not in resultDICT["intent"] and 'a9' not in resultDICT["intent"]:
                 resultDICT["intent"].append("c2")
                 resultDICT["intent"] = [item for item in resultDICT["intent"] if "a" not in item]
+                
+    if utterance == "誰也聽不懂":
+        if CHATBOT_MODE:
+            resultDICT["response"] = getResponse(utterance, args)
+        else:
+            resultDICT["universal"].append("誰也聽不懂")
+            if 'a1' not in resultDICT["intent"] and 'a5' not in resultDICT["intent"] and 'a9' not in resultDICT["intent"]:
+                resultDICT["intent"].append("c8")
+                resultDICT["intent"] = [item for item in resultDICT["intent"] if "a" not in item]
+                
+    if utterance == "隨機性即誰想做什麼就吃什麼":
+        if CHATBOT_MODE:
+            resultDICT["response"] = getResponse(utterance, args)
+        else:
+            resultDICT["universal"].append("隨機性即誰想做什麼就吃什麼")
+            if 'a1' not in resultDICT["intent"] and 'a5' not in resultDICT["intent"] and 'a9' not in resultDICT["intent"]:
+                resultDICT["intent"].append("c9")
+                resultDICT["intent"] = [item for item in resultDICT["intent"] if "a" not in item]
+                
+    if utterance == "老實說誰都綑不住我":
+        if CHATBOT_MODE:
+            resultDICT["response"] = getResponse(utterance, args)
+        else:
+            resultDICT["universal"].append("老實說誰都綑不住我")
+            if 'a1' not in resultDICT["intent"] and 'a5' not in resultDICT["intent"] and 'a9' not in resultDICT["intent"]:
+                resultDICT["intent"].append("c10")
+                resultDICT["intent"] = [item for item in resultDICT["intent"] if "a" not in item]        
+        
+        
 
     return resultDICT

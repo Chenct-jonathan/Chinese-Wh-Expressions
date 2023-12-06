@@ -58,27 +58,56 @@ def getResult(inputSTR, utterance, args, resultDICT, refDICT):
             resultDICT["response"] = getResponse(utterance, args)
         else:
             resultDICT["existential"].append("可曾看到有誰去辦誰")
-            resultDICT["intent"].append("b2")
+            if 'a1' not in resultDICT["intent"] and 'a5' not in resultDICT["intent"] and 'a9' not in resultDICT["intent"]:
+                resultDICT["intent"].append("b2")
+                resultDICT["intent"] = [item for item in resultDICT["intent"] if "a" not in item]
+                
     
     if utterance == "或者說誰誰誰不好":
         if CHATBOT_MODE:
             resultDICT["response"] = getResponse(utterance, args)
         else:
             resultDICT["existential"].append("或者說誰誰誰不好")
-            resultDICT["intent"].append("b4")
+            if 'a1' not in resultDICT["intent"] and 'a5' not in resultDICT["intent"] and 'a9' not in resultDICT["intent"]:
+                resultDICT["intent"].append("b4")
+                resultDICT["intent"] = [item for item in resultDICT["intent"] if "a" not in item]
+            if 'c5' in resultDICT["intent"]:
+                resultDICT["intent"] = [item for item in resultDICT["intent"] if "c" not in item]
 
     if utterance == "所以我記得是誰呀":
         if CHATBOT_MODE:
             resultDICT["response"] = getResponse(utterance, args)
         else:
             resultDICT["existential"].append("所以我記得是誰呀")
-            resultDICT["intent"].append("b3")
+            if 'a1' not in resultDICT["intent"] and 'a5' not in resultDICT["intent"] and 'a9' not in resultDICT["intent"]:
+                resultDICT["intent"].append("b3")
+                resultDICT["intent"] = [item for item in resultDICT["intent"] if "a" not in item]
 
     if utterance == "那個誰呀":
         if CHATBOT_MODE:
             resultDICT["response"] = getResponse(utterance, args)
         else:
             resultDICT["existential"].append("那個誰呀")
-            resultDICT["intent"].append("b1")
+            if 'a1' not in resultDICT["intent"] and 'a5' not in resultDICT["intent"] and 'a9' not in resultDICT["intent"]:
+                resultDICT["intent"].append("b1")
+                resultDICT["intent"] = [item for item in resultDICT["intent"] if "a" not in item]
+                
+    if utterance == "沒有誰注意我存在":
+        if CHATBOT_MODE:
+            resultDICT["response"] = getResponse(utterance, args)
+        else:
+            resultDICT["existential"].append("那個誰呀")
+            if 'a1' not in resultDICT["intent"] and 'a5' not in resultDICT["intent"] and 'a9' not in resultDICT["intent"]:
+                resultDICT["intent"].append("b5")
+                resultDICT["intent"] = [item for item in resultDICT["intent"] if "a" not in item]
+                
+    if utterance == "彷彿生著誰的氣":
+        if CHATBOT_MODE:
+            resultDICT["response"] = getResponse(utterance, args)
+        else:
+            resultDICT["existential"].append("彷彿生著誰的氣")
+            if 'a1' not in resultDICT["intent"] and 'a5' not in resultDICT["intent"] and 'a9' not in resultDICT["intent"]:
+                resultDICT["intent"].append("b6")
+                resultDICT["intent"] = [item for item in resultDICT["intent"] if "a" not in item]
 
     return resultDICT
