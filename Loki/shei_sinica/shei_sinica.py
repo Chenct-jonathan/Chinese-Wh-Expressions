@@ -297,8 +297,8 @@ if __name__ == "__main__":
     with open("../../Corpus/purged/shei_sinica_purged.txt", "r", encoding="utf-8") as f:
         testLIST = f.readlines()
         
-    with open("../../log/log_1206", "w", encoding='utf-8') as log:
-        for i, inputSTR in enumerate(testLIST[begin:end], start=begin+1):
+    with open("../../log/log_1207", "w", encoding='utf-8') as log:
+        for i, inputSTR in enumerate(testLIST[:], start=begin+1):
             resultDICT = execLoki(inputSTR)
             if 'intent' in resultDICT.keys():
                 log.write(f"{i}. {resultDICT['intent']}\n")
