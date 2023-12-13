@@ -15,7 +15,8 @@
             "鏡頭",
             "古昔",
             "小孩",
-            "也許"
+            "也許",
+            "彷彿"
         ]
     },
     "utterance": {
@@ -163,7 +164,7 @@
                 "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(決定|判定|商定|敲定|斷定|決策|約定|解決|談定|酌定|判斷)</(ACTION_verb|VerbP)>",
                 "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(接班|接下|接下來|接住|接到|接受|接手|接掌|接收|接替|接案)</(ACTION_verb|VerbP)>"
             ],
-            "pattern": "<CLAUSE_WhoQ>誰</CLAUSE_WhoQ>(.+)?(<(ACTION_verb|VerbP)>[^<]+</(ACTION_verb|VerbP)>)+?"
+            "pattern": "<CLAUSE_WhoQ>誰</CLAUSE_WhoQ>(.+)?(?!<CLAUSE_WhoQ>誰</CLAUSE_WhoQ>)(<(ACTION_verb|VerbP)>[^<]+</(ACTION_verb|VerbP)>)+"
         },
         "票投給誰只有天知、地知、我知": {
             "id": "4d74ffd0-0efc-4f88-87e1-7847b5689b76",
@@ -172,7 +173,7 @@
                 "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(投給|投給了|選出來|換掉|大贏|投下去|讓給|想投|幹掉|當選了|當選)</(ACTION_verb|VerbP)>",
                 "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(知|明知|深知|知悉|知情|知曉|知足|知道|確知|了解|懂得)</(ACTION_verb|VerbP)>"
             ],
-            "pattern": "(<QUANTIFIER>都</QUANTIFIER>)?<(ACTION_verb|VerbP)>[^<]+</(ACTION_verb|VerbP)>(<FUNC_inner>(向|於)</FUNC_inner>)?<CLAUSE_WhoQ>誰</CLAUSE_WhoQ>"
+            "pattern": "(<QUANTIFIER>都</QUANTIFIER>)?<(ACTION_verb|VerbP)>[^<]+</(ACTION_verb|VerbP)>(<RANGE_(locality|period)>[^<]+</RANGE_(locality|period)>)?(<FUNC_inner>(向|於)</FUNC_inner>)?<CLAUSE_WhoQ>誰</CLAUSE_WhoQ>"
         },
         "不論發生在何時、何地、針對何人、由誰所為": {
             "id": "8bddc66c-f730-45fd-ab4f-9175cdaf0498",
@@ -196,7 +197,7 @@
                 "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(去|要去|回去|想去|去了|跑去|回來|跑來|趕去|出去|來)</(ACTION_verb|VerbP)>",
                 "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(判斷|判定|判決|斷定|研判|裁判|裁斷|評判|評斷|論斷|定奪)</(ACTION_verb|VerbP)>"
             ],
-            "pattern": "<CLAUSE_WhoQ>誰</CLAUSE_WhoQ>(<(MODIFIER|ModifierP)>[^<]+</(MODIFIER|ModifierP)>|<FUNC_degreeHead>[^<]+</FUNC_degreeHead>)<CLAUSE_WhoQ>誰</CLAUSE_WhoQ>(<(MODIFIER|ModifierP)>[^<]+</(MODIFIER|ModifierP)>|<FUNC_degreeHead>[^<]+</FUNC_degreeHead>)"
+            "pattern": "<CLAUSE_WhoQ>誰</CLAUSE_WhoQ>(<ENTITY_oov>[^<]{1}</ENTITY_oov>|<(MODIFIER|ModifierP)>[^<]{1}</(MODIFIER|ModifierP)>|<FUNC_degreeHead>[^<]{1}</FUNC_degreeHead>|<ACTION_verb>[^<]{1}</ACTION_verb>)<CLAUSE_WhoQ>誰</CLAUSE_WhoQ>(<ENTITY_oov>[^<]{1}</ENTITY_oov>|<(MODIFIER|ModifierP)>[^<]{1}</(MODIFIER|ModifierP)>|<FUNC_degreeHead>[^<]{1}</FUNC_degreeHead>|<ACTION_verb>[^<]{1}</ACTION_verb>)"
         }
     },
     "alias": {},

@@ -15,7 +15,8 @@
             "鏡頭",
             "古昔",
             "小孩",
-            "也許"
+            "也許",
+            "彷彿"
         ]
     },
     "utterance": {
@@ -86,6 +87,17 @@
             ],
             "pattern": "<CLAUSE_WhoQ>誰</CLAUSE_WhoQ>(.+)?<CLAUSE_WhoQ>誰</CLAUSE_WhoQ>(<MODAL>便</MODAL><AUX>是</AUX>|<AUX>就是</AUX>)"
         },
+        "只要誰說有效我就帶他去": {
+            "id": "6432a2fe-70c8-4016-91d5-c649d1028402",
+            "pos": "<MODIFIER>只</MODIFIER><ACTION_verb>要</ACTION_verb><CLAUSE_WhoQ>誰</CLAUSE_WhoQ><ACTION_verb>說</ACTION_verb><MODIFIER>有效</MODIFIER><ENTITY_pronoun>我</ENTITY_pronoun><FUNC_inner>就</FUNC_inner><ACTION_verb>帶</ACTION_verb><ENTITY_pronoun>他</ENTITY_pronoun><ACTION_verb>去</ACTION_verb>",
+            "lexy": [
+                "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(要|想要|需要|想拿|想買|渴望|渴求|真要|得照|更要|要去)</(ACTION_verb|VerbP)>",
+                "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(說|演說|說話|宣判|拼讀|談到|辯護|說真|有說|講出|說過)</(ACTION_verb|VerbP)>",
+                "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(帶|佩帶|夾帶|帶病|帶走|挾帶|攜帶|隨帶|佩戴|承接|披掛)</(ACTION_verb|VerbP)>",
+                "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(去|要去|回去|想去|去了|跑去|回來|跑來|趕去|出去|來)</(ACTION_verb|VerbP)>"
+            ],
+            "pattern": "<CLAUSE_WhoQ>誰</CLAUSE_WhoQ>(.+)?<FUNC_inner>就</FUNC_inner>"
+        },
         "誰打破了這個平衡誰就輸": {
             "id": "6c7ea7dd-8796-441b-be48-0eae375de11c",
             "pos": "<CLAUSE_WhoQ>誰</CLAUSE_WhoQ><VerbP>打破了</VerbP><ENTITY_DetPhrase>這個</ENTITY_DetPhrase><ENTITY_nouny>平衡</ENTITY_nouny><CLAUSE_WhoQ>誰</CLAUSE_WhoQ><FUNC_inner>就</FUNC_inner><ACTION_verb>輸</ACTION_verb>",
@@ -93,7 +105,7 @@
                 "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(打破了|扯破|破壞|破碎|破裂|砸破|突破|截斷|打斷|扣殺|折斷)</(ACTION_verb|VerbP)>",
                 "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(輸|贏|輸給|有輸|有贏|輸了|贏過|吃虧|認輸|忌口|算輸)</(ACTION_verb|VerbP)>"
             ],
-            "pattern": "<CLAUSE_WhoQ>誰</CLAUSE_WhoQ>(.+)?<CLAUSE_WhoQ>誰</CLAUSE_WhoQ>(<FUNC_in(ner|ter)>就</FUNC_in(ner|ter)>)?<(ACTION_verb|VerbP)>[^<]+</(ACTION_verb|VerbP)>"
+            "pattern": "<CLAUSE_WhoQ>誰</CLAUSE_WhoQ>(.+)?<CLAUSE_WhoQ>誰</CLAUSE_WhoQ>(<FUNC_inner>就</FUNC_inner>)?(<(MODIFIER|ModifierP)>[^<]+</(MODIFIER|ModifierP)>)?<(ACTION_verb|VerbP)>[^<]+</(ACTION_verb|VerbP)>"
         },
         "隨機性即誰想做什麼就吃什麼": {
             "id": "60b6e1fd-4ff8-4b50-9254-dacb07774c53",

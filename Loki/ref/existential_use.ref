@@ -15,7 +15,8 @@
             "鏡頭",
             "古昔",
             "小孩",
-            "也許"
+            "也許",
+            "彷彿"
         ]
     },
     "utterance": {
@@ -27,9 +28,9 @@
         },
         "彷彿生著誰的氣": {
             "id": "25c0f0af-596e-498e-835d-ae6669a7695c",
-            "pos": "<ENTITY_nouny>彷彿生</ENTITY_nouny><ASPECT>著</ASPECT><CLAUSE_WhoQ>誰</CLAUSE_WhoQ><FUNC_inner>的</FUNC_inner><ENTITY_nouny>氣</ENTITY_nouny>",
+            "pos": "<UserDefined>彷彿</UserDefined><ENTITY_oov>生</ENTITY_oov><ASPECT>著</ASPECT><CLAUSE_WhoQ>誰</CLAUSE_WhoQ><FUNC_inner>的</FUNC_inner><ENTITY_nouny>氣</ENTITY_nouny>",
             "lexy": [],
-            "pattern": "<ASPECT>著</ASPECT><CLAUSE_WhoQ>誰</CLAUSE_WhoQ>"
+            "pattern": "(<FUNC_inter>(假如|如果)</FUNC_inter>|<(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>彷彿</(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>|<DegreeP>好像</DegreeP>|<AUX>像[^<]+</AUX>)(.+)?<CLAUSE_WhoQ>誰</CLAUSE_WhoQ>"
         },
         "只要我是人家的誰": {
             "id": "be24083b-77f6-4f46-87e1-d76cf19ea778",
