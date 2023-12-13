@@ -2,14 +2,20 @@
     "language": "zh-tw",
     "type": "advance",
     "version": {
-        "atk": "v267",
+        "atk": "v268",
         "intent": "1.0"
     },
     "user_defined": {
         "_asNoun": [
             "久旺",
             "奧會",
-            "詩"
+            "詩",
+            "溫床",
+            "道理",
+            "鏡頭",
+            "古昔",
+            "小孩",
+            "也許"
         ]
     },
     "utterance": {
@@ -28,7 +34,15 @@
                 "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(敢|敢做|敢為|願意|忍心|容|許|敢過|願|捨得|吝於)</(ACTION_verb|VerbP)>",
                 "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(動|動性|新動|溜放|動等|動亦|去產|大動|作動|驅動|費功)</(ACTION_verb|VerbP)>"
             ],
-            "pattern": "<CLAUSE_WhoQ>誰</CLAUSE_WhoQ><MODIFIER>也</MODIFIER>((?<!</FUNC_negation>)<(ACTION_verb|VerbP)>[^<]+</(ACTION_verb|VerbP)>)?<FUNC_negation>[^<]+</FUNC_negation>"
+            "pattern": "<CLAUSE_WhoQ>誰</CLAUSE_WhoQ><MODIFIER>也</MODIFIER>((?<!</FUNC_negation>)<(ACTION_verb|VerbP)>[^<]+</(ACTION_verb|VerbP)>)?(<MODIFIER>不大</MODIFIER>|<FUNC_negation>[^<]+</FUNC_negation>)"
+        },
+        "誰也聽不懂": {
+            "id": "341adaca-0354-4ba6-902c-2dfd7ae84519",
+            "pos": "<CLAUSE_WhoQ>誰</CLAUSE_WhoQ><MODIFIER>也</MODIFIER><ACTION_verb>聽不懂</ACTION_verb>",
+            "lexy": [
+                "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(聽不懂|看不懂|聽得懂|記不住|記不起來|聽不到|忘記了|看得懂|懂|想不出|忘記)</(ACTION_verb|VerbP)>"
+            ],
+            "pattern": "<CLAUSE_WhoQ>誰</CLAUSE_WhoQ><MODIFIER>也</MODIFIER><(ACTION_verb|VerbP)>[^<]+不[^<]+</(ACTION_verb|VerbP)>"
         },
         "誰也說不上來": {
             "id": "1d1e2ab4-beeb-48e4-894b-c3dfec2e264a",
@@ -45,6 +59,15 @@
             ],
             "pattern": "<CLAUSE_WhoQ>誰</CLAUSE_WhoQ>(.+)?(<MODAL>便</MODAL>|<FUNC_inner>就</FUNC_inner>)(<ACTION_verb>[^<]+</ACTION_verb>|<ACTION_lightVerb>[^<]+</ACTION_lightVerb>)+<CLAUSE_WhoQ>誰</CLAUSE_WhoQ>"
         },
+        "老實說誰都綑不住我": {
+            "id": "c74ac014-a894-469b-b39f-94c5abb65b83",
+            "pos": "<MODIFIER>老實</MODIFIER><ACTION_verb>說</ACTION_verb><ENTITY_nouny>誰</ENTITY_nouny><MODIFIER>都綑</MODIFIER><FUNC_negation>不</FUNC_negation><ACTION_verb>住</ACTION_verb><ENTITY_pronoun>我</ENTITY_pronoun>",
+            "lexy": [
+                "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(說|演說|說話|宣判|拼讀|談到|辯護|說真|有說|講出|說過)</(ACTION_verb|VerbP)>",
+                "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(住|居住|獨處|生存|生活|討生活|過活|住下|同住|暫住|租住)</(ACTION_verb|VerbP)>"
+            ],
+            "pattern": "<ENTITY_nouny>誰</ENTITY_nouny>(<(MODIFIER|ModifierP)>都[^<]+</(MODIFIER|ModifierP)>)?<FUNC_negation>不</FUNC_negation><(ACTION_verb|VerbP)>住</(ACTION_verb|VerbP)>"
+        },
         "選誰來做都一樣可行": {
             "id": "46bc1276-4b93-48d4-b992-071b8b7e023e",
             "pos": "<ACTION_verb>選</ACTION_verb><CLAUSE_WhoQ>誰</CLAUSE_WhoQ><ACTION_verb>來</ACTION_verb><ACTION_verb>做</ACTION_verb><QUANTIFIER>都</QUANTIFIER><DegreeP>一樣可行</DegreeP>",
@@ -53,7 +76,7 @@
                 "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(來|上來|下來|來到|前來|回來|進來|來語|端來|出來|值來)</(ACTION_verb|VerbP)>",
                 "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(做|作用|假作|假裝|冒充|創作|創造|喬裝|孕育|攝製|生出)</(ACTION_verb|VerbP)>"
             ],
-            "pattern": "(<CLAUSE_WhoQ>誰</CLAUSE_WhoQ>|<ENTITY_oov>誰</ENTITY_oov>|<ENTITY_nounHead>誰</ENTITY_nounHead>|<ENTITY_nouny>誰</ENTITY_nouny>)(.+)?<QUANTIFIER>(都|皆)</QUANTIFIER>"
+            "pattern": "(<ENTITY_nouny>那誰</ENTITY_nouny>|<CLAUSE_WhoQ>誰</CLAUSE_WhoQ>|<ENTITY_oov>誰</ENTITY_oov>|<ENTITY_nounHead>誰</ENTITY_nounHead>|<ENTITY_nouny>誰</ENTITY_nouny>)(.+)?(?!<MODAL>)<QUANTIFIER>(都|皆)</QUANTIFIER>"
         },
         "誰做好公民誰就是傻瓜": {
             "id": "4efb6ea0-e198-41af-84a0-a7d8d375f674",
@@ -71,6 +94,15 @@
                 "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(輸|贏|輸給|有輸|有贏|輸了|贏過|吃虧|認輸|忌口|算輸)</(ACTION_verb|VerbP)>"
             ],
             "pattern": "<CLAUSE_WhoQ>誰</CLAUSE_WhoQ>(.+)?<CLAUSE_WhoQ>誰</CLAUSE_WhoQ>(<FUNC_in(ner|ter)>就</FUNC_in(ner|ter)>)?<(ACTION_verb|VerbP)>[^<]+</(ACTION_verb|VerbP)>"
+        },
+        "隨機性即誰想做什麼就吃什麼": {
+            "id": "60b6e1fd-4ff8-4b50-9254-dacb07774c53",
+            "pos": "<MODIFIER>隨機</MODIFIER><MODIFIER>性</MODIFIER><FUNC_inter>即</FUNC_inter><CLAUSE_WhoQ>誰</CLAUSE_WhoQ><ACTION_verb>想做</ACTION_verb><CLAUSE_WhatQ>什麼</CLAUSE_WhatQ><FUNC_inner>就</FUNC_inner><ACTION_verb>吃</ACTION_verb><CLAUSE_WhatQ>什麼</CLAUSE_WhatQ>",
+            "lexy": [
+                "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(想做|得做|愛做|想幫|想當|想說|想寫|想找|辦不到|想看|想問)</(ACTION_verb|VerbP)>",
+                "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(吃|吃掉|吸收|攝入|耗損|花掉|吃著|煮|啃|喝|吃了)</(ACTION_verb|VerbP)>"
+            ],
+            "pattern": "<CLAUSE_WhoQ>誰</CLAUSE_WhoQ><(ACTION_verb|VerbP)>[^<]+</(ACTION_verb|VerbP)>(<CLAUSE_WhatQ>什麼</CLAUSE_WhatQ>|<ENTITY_nouny>什麼</ENTITY_nouny>)(<FUNC_in(ner|ter)>就</FUNC_in(ner|ter)>)?<(ACTION_verb|VerbP)>[^<]+</(ACTION_verb|VerbP)>(<CLAUSE_WhatQ>什麼</CLAUSE_WhatQ>|<ENTITY_nouny>什麼</ENTITY_nouny>)"
         }
     },
     "alias": {},

@@ -292,12 +292,13 @@ def testIntent():
 
 
 if __name__ == "__main__":
+    #'''
     begin = 0
     end = 701
     with open("../../Corpus/purged/shei_sinica_purged.txt", "r", encoding="utf-8") as f:
         testLIST = f.readlines()
         
-    with open("../../log/log_1207", "w", encoding='utf-8') as log:
+    with open("../../log/log_1213", "w", encoding='utf-8') as log:
         for i, inputSTR in enumerate(testLIST[:], start=begin+1):
             resultDICT = execLoki(inputSTR)
             if 'intent' in resultDICT.keys():
@@ -309,7 +310,8 @@ if __name__ == "__main__":
     
     
     '''
-    inputSTR = "還有誰都考第一名呢?"
+    inputSTR = "躺在床上還一直爭論誰先來誰先吃"
     resultDICT = execLoki([inputSTR])
     print(resultDICT)
+    
     '''

@@ -141,6 +141,15 @@ def getResult(inputSTR, utterance, args, resultDICT, refDICT):
             resultDICT["universal"].append("老實說誰都綑不住我")
             if 'a1' not in resultDICT["intent"] and 'a5' not in resultDICT["intent"] and 'a9' not in resultDICT["intent"]:
                 resultDICT["intent"].append("c10")
+                resultDICT["intent"] = [item for item in resultDICT["intent"] if "a" not in item]
+                
+    if utterance == "只要誰說有效我就帶他去":
+        if CHATBOT_MODE:
+            resultDICT["response"] = getResponse(utterance, args)
+        else:
+            resultDICT["universal"].append("只要誰說有效我就帶他去")
+            if 'a1' not in resultDICT["intent"] and 'a5' not in resultDICT["intent"] and 'a9' not in resultDICT["intent"]:
+                resultDICT["intent"].append("c11")
                 resultDICT["intent"] = [item for item in resultDICT["intent"] if "a" not in item]        
         
         
