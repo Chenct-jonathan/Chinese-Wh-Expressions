@@ -50,6 +50,7 @@ def getResponse(utterance, args):
 
 def getResult(inputSTR, utterance, args, resultDICT, refDICT):
     debugInfo(inputSTR, utterance)
+    resultDICT["測試句"] = inputSTR
     resultDICT["existential"] = []
     if 'intent' not in resultDICT.keys():
         resultDICT["intent"] = []
@@ -59,6 +60,7 @@ def getResult(inputSTR, utterance, args, resultDICT, refDICT):
         else:
             resultDICT["existential"].append("可曾看到有誰去辦誰")
             if 'a1' not in resultDICT["intent"] and 'a5' not in resultDICT["intent"] and 'a9' not in resultDICT["intent"]:
+                resultDICT["existential wh checker"] = True
                 resultDICT["intent"].append("b2")
                 resultDICT["intent"] = [item for item in resultDICT["intent"] if "a" not in item]
                 

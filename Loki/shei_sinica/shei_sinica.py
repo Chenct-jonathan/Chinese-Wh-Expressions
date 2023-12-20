@@ -45,6 +45,7 @@
 from copy import deepcopy
 from requests import post
 from requests import codes
+from pprint import pprint
 import json
 import math
 import os
@@ -184,7 +185,12 @@ def runLoki(inputLIST, filterLIST=[], refDICT={}):
     lokiRst = LokiResult(inputLIST, filterLIST)
     if lokiRst.getStatus():
         for index, key in enumerate(inputLIST):
-            lokiResultDICT = {}
+            lokiResultDICT = {
+                "測試句": "",
+                "interrogative wh checker": False,
+                "existential wh checker": False,
+                "universal wh checker": False,
+            }
             for resultIndex in range(0, lokiRst.getLokiLen(index)):
                 # existential_use
                 if lokiRst.getIntent(index, resultIndex) == "existential_use":
@@ -292,7 +298,7 @@ def testIntent():
 
 
 if __name__ == "__main__":
-    #'''
+    '''
     begin = 0
     end = 701
     with open("../../Corpus/purged/shei_sinica_purged.txt", "r", encoding="utf-8") as f:
@@ -310,8 +316,15 @@ if __name__ == "__main__":
     
     
     '''
-    inputSTR = "躺在床上還一直爭論誰先來誰先吃"
-    resultDICT = execLoki([inputSTR])
-    print(resultDICT)
-    
-    '''
+    inputLIST = ["未來又由誰來決定接班的人呢", "還有誰會來", "誰吃飯吃最快", "他一定見過那個誰", "誰票最多誰就當選"]
+    for inputSTR in inputLIST: 
+        resultDICT = execLoki([inputSTR])
+        print("\n")
+        pprint(resultDICT)
+        print("\n")
+        print(f"測試句：{resultDICT['測試句']}")
+        print(f"interrogative wh checker：{resultDICT['interrogative wh checker']}")
+        print(f"existential wh checker：{resultDICT['existential wh checker']}")
+        print(f"universal wh checker：{resultDICT['universal wh checker']}")
+        
+    #'''

@@ -50,6 +50,7 @@ def getResponse(utterance, args):
 
 def getResult(inputSTR, utterance, args, resultDICT, refDICT):
     debugInfo(inputSTR, utterance)
+    resultDICT["測試句"] = inputSTR
     resultDICT["universal"] = []
     if 'intent' not in resultDICT.keys():
         resultDICT["intent"] = []    
