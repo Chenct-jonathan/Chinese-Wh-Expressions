@@ -299,32 +299,44 @@ def testIntent():
 
 if __name__ == "__main__":
     '''
-    begin = 0
-    end = 701
+    inputLIST = ["不論誰將是台灣第一任民選總統", "無論是誰會來", "還有誰會來"]
+    with open("../../log/log_TEST.txt", "w", encoding='utf-8') as log:
+        for i, inputSTR in enumerate(inputLIST, start=1):  
+            resultDICT = execLoki([inputSTR])
+            log.write(f"[{i}]\n")  
+            log.write(f"測試句：{resultDICT['測試句']}\n")
+            log.write(f"interrogative wh checker：{resultDICT['interrogative wh checker']}\n")
+            log.write(f"existential wh checker：{resultDICT['existential wh checker']}\n")
+            log.write(f"universal wh checker：{resultDICT['universal wh checker']}\n")
+            log.write("=======================================================================================================================================\n")
+    
+            
+            print(f"測試句：{resultDICT['測試句']}")
+            print(f"interrogative wh checker：{resultDICT['interrogative wh checker']}")
+            print(f"existential wh checker：{resultDICT['existential wh checker']}")
+            print(f"universal wh checker：{resultDICT['universal wh checker']}")            
+            print("=======================================================================================================================================")     
+    
+    '''
+    begin = 101
+    end = 215
     with open("../../Corpus/purged/shei_sinica_purged.txt", "r", encoding="utf-8") as f:
         testLIST = f.readlines()
         
-    with open("../../log/log_1213", "w", encoding='utf-8') as log:
-        for i, inputSTR in enumerate(testLIST[:], start=begin+1):
+    with open("../../log/log_1220_test5", "w", encoding='utf-8') as log:
+        for i, inputSTR in enumerate(testLIST[begin:end], start=begin+1):
             resultDICT = execLoki(inputSTR)
             if 'intent' in resultDICT.keys():
                 log.write(f"{i}. {resultDICT['intent']}\n")
             else:
                 log.write(f"{i}. Missed\n")
+
             print(f"{i}. {resultDICT}")
+            print("\n")
+            print(f"測試句：{resultDICT['測試句']}")
+            print(f"interrogative wh checker：{resultDICT['interrogative wh checker']}")
+            print(f"existential wh checker：{resultDICT['existential wh checker']}")
+            print(f"universal wh checker：{resultDICT['universal wh checker']}")            
             print("=======================================================================================================================================")
+                       
     
-    
-    '''
-    inputLIST = ["未來又由誰來決定接班的人呢", "還有誰會來", "誰吃飯吃最快", "他一定見過那個誰", "誰票最多誰就當選"]
-    for inputSTR in inputLIST: 
-        resultDICT = execLoki([inputSTR])
-        print("\n")
-        pprint(resultDICT)
-        print("\n")
-        print(f"測試句：{resultDICT['測試句']}")
-        print(f"interrogative wh checker：{resultDICT['interrogative wh checker']}")
-        print(f"existential wh checker：{resultDICT['existential wh checker']}")
-        print(f"universal wh checker：{resultDICT['universal wh checker']}")
-        
-    #'''

@@ -59,6 +59,7 @@ def getResult(inputSTR, utterance, args, resultDICT, refDICT):
             resultDICT["response"] = getResponse(utterance, args)
         else:
             resultDICT["interrogative wh checker"] = True
+            resultDICT["universal wh checker"] = False
             resultDICT["interrogative"].append("誰先誰後")
             resultDICT["intent"].append("a18")
             resultDICT["intent"] = [item for item in resultDICT["intent"] if "c" not in item]    
@@ -68,6 +69,7 @@ def getResult(inputSTR, utterance, args, resultDICT, refDICT):
             resultDICT["response"] = getResponse(utterance, args)
         else:
             resultDICT["interrogative wh checker"] = True
+            resultDICT["universal wh checker"] = False
             resultDICT["interrogative"].append("不論誰是誰非")
             resultDICT["intent"].append("a16")
             resultDICT["intent"] = [item for item in resultDICT["intent"] if "c" not in item]
@@ -78,6 +80,7 @@ def getResult(inputSTR, utterance, args, resultDICT, refDICT):
             resultDICT["response"] = getResponse(utterance, args)
         else:
             resultDICT["interrogative wh checker"] = True
+            resultDICT["universal wh checker"] = False
             resultDICT["interrogative"].append("或是沒有能力去判斷候選人的政策究竟誰好誰壞")
             resultDICT["intent"].append("a23")
             resultDICT["intent"] = [item for item in resultDICT["intent"] if "c" not in item]
@@ -87,6 +90,7 @@ def getResult(inputSTR, utterance, args, resultDICT, refDICT):
             resultDICT["response"] = getResponse(utterance, args)
         else:
             resultDICT["interrogative wh checker"] = True
+            resultDICT["universal wh checker"] = False
             resultDICT["interrogative"].append("誰跟誰求婚")
             resultDICT["intent"].append("a9")
             resultDICT["intent"] = [item for item in resultDICT["intent"] if "c" not in item]    
@@ -96,9 +100,11 @@ def getResult(inputSTR, utterance, args, resultDICT, refDICT):
             resultDICT["response"] = getResponse(utterance, args)
         else:
             resultDICT["interrogative wh checker"] = True
+            resultDICT["universal wh checker"] = False
             resultDICT["interrogative"].append("你寫給誰呢")
             resultDICT["intent"].append("a1")
             resultDICT["intent"] = [item for item in resultDICT["intent"] if "c" not in item]
+            
 
     if utterance == "幸運者是誰": #
         if CHATBOT_MODE:
@@ -146,6 +152,7 @@ def getResult(inputSTR, utterance, args, resultDICT, refDICT):
             resultDICT["response"] = getResponse(utterance, args)
         else:
             resultDICT["interrogative wh checker"] = True
+            resultDICT["universal wh checker"] = False
             resultDICT["interrogative"].append("還有誰會來買本國的產品")
             resultDICT["intent"].append("a5")
             resultDICT["intent"] = [item for item in resultDICT["intent"] if "c" not in item]
@@ -163,6 +170,7 @@ def getResult(inputSTR, utterance, args, resultDICT, refDICT):
             resultDICT["response"] = getResponse(utterance, args)
         else:
             resultDICT["interrogative wh checker"] = True
+            resultDICT["universal wh checker"] = False
             resultDICT["interrogative"].append("要不然誰把你Ｆｉｒｅ")
             resultDICT["intent"].append("a10")
             resultDICT["intent"] = [item for item in resultDICT["intent"] if "c" not in item]
@@ -172,6 +180,7 @@ def getResult(inputSTR, utterance, args, resultDICT, refDICT):
             resultDICT["response"] = getResponse(utterance, args)
         else:
             resultDICT["interrogative wh checker"] = True
+            resultDICT["universal wh checker"] = False
             resultDICT["interrogative"].append("誰狠心")
             resultDICT["intent"].append("a11")
             resultDICT["intent"] = [item for item in resultDICT["intent"] if "c" not in item]
@@ -179,11 +188,15 @@ def getResult(inputSTR, utterance, args, resultDICT, refDICT):
     if utterance == "究竟是其中誰的貢獻了": #
         if CHATBOT_MODE:
             resultDICT["response"] = getResponse(utterance, args)
-        else:
+        else:    
             resultDICT["interrogative wh checker"] = True
+            resultDICT["universal wh checker"] = False
             resultDICT["interrogative"].append("究竟是其中誰的貢獻了")
-            if 'b6' not in resultDICT['intent']:
+            if 'b6' not in resultDICT['intent']:                
                 resultDICT["intent"].append("a12")
+            if 'b6' in resultDICT['intent']:
+                resultDICT["existential wh checker"] = True
+                resultDICT["interrogative wh checker"] = False                
                 resultDICT["intent"] = [item for item in resultDICT["intent"] if "c" not in item]
                 
     if utterance == "誰不要臉": #
@@ -191,6 +204,7 @@ def getResult(inputSTR, utterance, args, resultDICT, refDICT):
             resultDICT["response"] = getResponse(utterance, args)
         else:
             resultDICT["interrogative wh checker"] = True
+            resultDICT["universal wh checker"] = False
             resultDICT["interrogative"].append("誰不要臉")
             resultDICT["intent"].append("a13")
             resultDICT["intent"] = [item for item in resultDICT["intent"] if "c" not in item]
@@ -200,6 +214,7 @@ def getResult(inputSTR, utterance, args, resultDICT, refDICT):
             resultDICT["response"] = getResponse(utterance, args)
         else:
             resultDICT["interrogative wh checker"] = True
+            resultDICT["universal wh checker"] = False
             resultDICT["interrogative"].append("我們誰又不是邁向歸途")
             resultDICT["intent"].append("a14")
             resultDICT["intent"] = [item for item in resultDICT["intent"] if "c" not in item]
@@ -209,6 +224,7 @@ def getResult(inputSTR, utterance, args, resultDICT, refDICT):
             resultDICT["response"] = getResponse(utterance, args)
         else:
             resultDICT["interrogative wh checker"] = True
+            resultDICT["universal wh checker"] = False
             resultDICT["interrogative"].append("誰在醫學院屋頂")
             resultDICT["intent"].append("a15")
             resultDICT["intent"] = [item for item in resultDICT["intent"] if "c" not in item]
@@ -218,6 +234,7 @@ def getResult(inputSTR, utterance, args, resultDICT, refDICT):
             resultDICT["response"] = getResponse(utterance, args)
         else:
             resultDICT["interrogative wh checker"] = True
+            resultDICT["universal wh checker"] = False
             resultDICT["interrogative"].append("誰爸爸有錢")
             resultDICT["intent"].append("a17")
             resultDICT["intent"] = [item for item in resultDICT["intent"] if "c" not in item]
@@ -227,6 +244,7 @@ def getResult(inputSTR, utterance, args, resultDICT, refDICT):
             resultDICT["response"] = getResponse(utterance, args)
         else:
             resultDICT["interrogative wh checker"] = True
+            resultDICT["universal wh checker"] = False
             resultDICT["interrogative"].append("誰比較恐怖")
             resultDICT["intent"].append("a19")
             resultDICT["intent"] = [item for item in resultDICT["intent"] if "c" not in item]
@@ -236,6 +254,7 @@ def getResult(inputSTR, utterance, args, resultDICT, refDICT):
             resultDICT["response"] = getResponse(utterance, args)
         else:
             resultDICT["interrogative wh checker"] = True
+            resultDICT["universal wh checker"] = False
             resultDICT["interrogative"].append("你怪誰")
             resultDICT["intent"].append("a20")
             resultDICT["intent"] = [item for item in resultDICT["intent"] if "c" not in item]
@@ -245,6 +264,7 @@ def getResult(inputSTR, utterance, args, resultDICT, refDICT):
             resultDICT["response"] = getResponse(utterance, args)
         else:
             resultDICT["interrogative wh checker"] = True
+            resultDICT["universal wh checker"] = False
             resultDICT["interrogative"].append("你怪誰")
             resultDICT["intent"].append("a21")
             resultDICT["intent"] = [item for item in resultDICT["intent"] if "c" not in item]
@@ -254,6 +274,7 @@ def getResult(inputSTR, utterance, args, resultDICT, refDICT):
             resultDICT["response"] = getResponse(utterance, args)
         else:
             resultDICT["interrogative wh checker"] = True
+            resultDICT["universal wh checker"] = False
             resultDICT["interrogative"].append("談判雙方誰在上風")
             resultDICT["intent"].append("a22")
             resultDICT["intent"] = [item for item in resultDICT["intent"] if "c" not in item]
@@ -263,6 +284,7 @@ def getResult(inputSTR, utterance, args, resultDICT, refDICT):
             resultDICT["response"] = getResponse(utterance, args)
         else:
             resultDICT["interrogative wh checker"] = True
+            resultDICT["universal wh checker"] = False
             resultDICT["interrogative"].append("或是沒有能力去判斷候選人的政策究竟誰好誰壞")
             resultDICT["intent"].append("a24")
             resultDICT["intent"] = [item for item in resultDICT["intent"] if "c" not in item]        
