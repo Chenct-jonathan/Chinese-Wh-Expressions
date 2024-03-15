@@ -318,12 +318,12 @@ if __name__ == "__main__":
             print("=======================================================================================================================================")     
     
     '''
-    begin = 101
-    end = 215
+    begin = 0
+    end = 2697
     with open("../../Corpus/purged/shei_sinica_purged.txt", "r", encoding="utf-8") as f:
         testLIST = f.readlines()
         
-    with open("../../log/log_1220_test5", "w", encoding='utf-8') as log:
+    with open("../../log/log_0315", "w", encoding='utf-8') as log:
         for i, inputSTR in enumerate(testLIST[begin:end], start=begin+1):
             resultDICT = execLoki(inputSTR)
             if 'intent' in resultDICT.keys():
