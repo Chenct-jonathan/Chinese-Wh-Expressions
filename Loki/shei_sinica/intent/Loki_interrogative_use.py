@@ -265,7 +265,7 @@ def getResult(inputSTR, utterance, args, resultDICT, refDICT):
         else:
             resultDICT["interrogative wh checker"] = True
             resultDICT["universal wh checker"] = False
-            resultDICT["interrogative"].append("你怪誰")
+            resultDICT["interrogative"].append("現在誰還有農業時代那麼好的耐心和浪漫情懷")
             resultDICT["intent"].append("a21")
             resultDICT["intent"] = [item for item in resultDICT["intent"] if "c" not in item]
             
@@ -285,9 +285,19 @@ def getResult(inputSTR, utterance, args, resultDICT, refDICT):
         else:
             resultDICT["interrogative wh checker"] = True
             resultDICT["universal wh checker"] = False
-            resultDICT["interrogative"].append("或是沒有能力去判斷候選人的政策究竟誰好誰壞")
+            resultDICT["interrogative"].append("不論發生在何時、何地、針對何人、由誰所為")
             resultDICT["intent"].append("a24")
-            resultDICT["intent"] = [item for item in resultDICT["intent"] if "c" not in item]        
-        
+            resultDICT["intent"] = [item for item in resultDICT["intent"] if "c" not in item]
+            
+    if utterance == "所以它到底是誰在說什麼故事給誰聽":
+        if CHATBOT_MODE:
+            resultDICT["response"] = getResponse(utterance, args)
+        else:
+            resultDICT["interrogative wh checker"] = True
+            resultDICT["universal wh checker"] = False
+            resultDICT["interrogative"].append("所以它到底是誰在說什麼故事給誰聽")
+            resultDICT["intent"].append("a25")
+            resultDICT["intent"] = [item for item in resultDICT["intent"] if "c" not in item]
+                
 
     return resultDICT

@@ -298,24 +298,28 @@ def testIntent():
 
 
 if __name__ == "__main__":
+    
+    inputLIST = ["會湧起這樣的字眼是任誰也想不到的吧"]
+    
     '''
-    inputLIST = ["不論誰將是台灣第一任民選總統", "無論是誰會來", "還有誰會來"]
     with open("../../log/log_TEST.txt", "w", encoding='utf-8') as log:
-        for i, inputSTR in enumerate(inputLIST, start=1):  
-            resultDICT = execLoki([inputSTR])
+    '''
+    for i, inputSTR in enumerate(inputLIST, start=1):  
+        resultDICT = execLoki([inputSTR])
+    '''
             log.write(f"[{i}]\n")  
             log.write(f"測試句：{resultDICT['測試句']}\n")
             log.write(f"interrogative wh checker：{resultDICT['interrogative wh checker']}\n")
             log.write(f"existential wh checker：{resultDICT['existential wh checker']}\n")
             log.write(f"universal wh checker：{resultDICT['universal wh checker']}\n")
             log.write("=======================================================================================================================================\n")
-    
+    '''
             
-            print(f"測試句：{resultDICT['測試句']}")
-            print(f"interrogative wh checker：{resultDICT['interrogative wh checker']}")
-            print(f"existential wh checker：{resultDICT['existential wh checker']}")
-            print(f"universal wh checker：{resultDICT['universal wh checker']}")            
-            print("=======================================================================================================================================")     
+    print(f"測試句：{resultDICT['測試句']}")
+    print(f"interrogative wh checker：{resultDICT['interrogative wh checker']}")
+    print(f"existential wh checker：{resultDICT['existential wh checker']}")
+    print(f"universal wh checker：{resultDICT['universal wh checker']}")            
+    print("=======================================================================================================================================")     
     
     '''
     begin = 0
@@ -340,3 +344,4 @@ if __name__ == "__main__":
             print("=======================================================================================================================================")
                        
     
+    '''
