@@ -299,7 +299,7 @@ def testIntent():
 
 if __name__ == "__main__":
     
-    inputLIST = ["會湧起這樣的字眼是任誰也想不到的吧"]
+    inputLIST = ["不是你想約誰誰就來的"]
     
     '''
     with open("../../log/log_TEST.txt", "w", encoding='utf-8') as log:

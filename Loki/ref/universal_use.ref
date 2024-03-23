@@ -8,15 +8,16 @@
     "user_defined": {
         "_asNoun": [
             "久旺",
-            "奧會",
-            "詩",
-            "溫床",
-            "道理",
-            "鏡頭",
-            "古昔",
-            "小孩",
             "也許",
-            "彷彿"
+            "勝負",
+            "古昔",
+            "奧會",
+            "小孩",
+            "彷彿",
+            "溫床",
+            "詩",
+            "道理",
+            "鏡頭"
         ]
     },
     "utterance": {
@@ -44,6 +45,14 @@
                 "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(聽不懂|看不懂|聽得懂|記不住|記不起來|聽不到|忘記了|看得懂|懂|想不出|忘記)</(ACTION_verb|VerbP)>"
             ],
             "pattern": "<CLAUSE_WhoQ>誰</CLAUSE_WhoQ><MODIFIER>也</MODIFIER><(ACTION_verb|VerbP)>[^<]+不[^<]+</(ACTION_verb|VerbP)>"
+        },
+        "誰也難討好": {
+            "id": "ffdfb358-b969-4dc0-a52d-78a7f41490fa",
+            "pos": "<CLAUSE_WhoQ>誰</CLAUSE_WhoQ><MODIFIER>也</MODIFIER><MODIFIER>難</MODIFIER><ACTION_verb>討好</ACTION_verb>",
+            "lexy": [
+                "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(討好|巴結|趨附|逢迎|服氣|怕苦|服輸|屑|討喜|怯場|講理)</(ACTION_verb|VerbP)>"
+            ],
+            "pattern": "<CLAUSE_WhoQ>誰</CLAUSE_WhoQ><(MODIFIER|ModifierP)>也</(MODIFIER|ModifierP)><(MODIFIER|ModifierP)>難</(MODIFIER|ModifierP)>"
         },
         "誰也說不上來": {
             "id": "1d1e2ab4-beeb-48e4-894b-c3dfec2e264a",
@@ -79,6 +88,15 @@
             ],
             "pattern": "(<ENTITY_nouny>那誰</ENTITY_nouny>|<CLAUSE_WhoQ>誰</CLAUSE_WhoQ>|<ENTITY_oov>誰</ENTITY_oov>|<ENTITY_nounHead>誰</ENTITY_nounHead>|<ENTITY_nouny>誰</ENTITY_nouny>)(.+)?(?!<MODAL>)<QUANTIFIER>(都|皆)</QUANTIFIER>"
         },
+        "再也沒有誰能聽得到了": {
+            "id": "e13b2f25-89d2-4c8f-847c-b6eba7bdc0b2",
+            "pos": "<MODIFIER>再</MODIFIER><MODIFIER>也</MODIFIER><FUNC_negation>沒有</FUNC_negation><CLAUSE_WhoQ>誰</CLAUSE_WhoQ><MODAL>能</MODAL><ACTION_verb>聽</ACTION_verb><FUNC_inner>得</FUNC_inner><VerbP>到了</VerbP>",
+            "lexy": [
+                "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(聽|判處|嗔怨|嚴斥|指斥|聲討|聽著|聽老|傷假|聽完|視兒)</(ACTION_verb|VerbP)>",
+                "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(到了|到|到約|來到|來到了|到達了|到離|到為了|到臨|走到了|跑到)</(ACTION_verb|VerbP)>"
+            ],
+            "pattern": "<(MODIFIER|ModifierP)>再</(MODIFIER|ModifierP)><(MODIFIER|ModifierP)>也</(MODIFIER|ModifierP)><FUNC_negation>[^<]+</FUNC_negation><CLAUSE_WhoQ>誰</CLAUSE_WhoQ><MODAL>[^<]+</MODAL>"
+        },
         "誰做好公民誰就是傻瓜": {
             "id": "4efb6ea0-e198-41af-84a0-a7d8d375f674",
             "pos": "<CLAUSE_WhoQ>誰</CLAUSE_WhoQ><ACTION_verb>做</ACTION_verb><ENTITY_nouny>好公民</ENTITY_nouny><CLAUSE_WhoQ>誰</CLAUSE_WhoQ><AUX>就是</AUX><ENTITY_nouny>傻瓜</ENTITY_nouny>",
@@ -96,7 +114,7 @@
                 "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(帶|佩帶|夾帶|帶病|帶走|挾帶|攜帶|隨帶|佩戴|承接|披掛)</(ACTION_verb|VerbP)>",
                 "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(去|要去|回去|想去|去了|跑去|回來|跑來|趕去|出去|來)</(ACTION_verb|VerbP)>"
             ],
-            "pattern": "<CLAUSE_WhoQ>誰</CLAUSE_WhoQ>(.+)?<FUNC_inner>就</FUNC_inner>"
+            "pattern": "<CLAUSE_WhoQ>誰</CLAUSE_WhoQ>(.+)?(<ENTITY_pronoun>[^<]+</ENTITY_pronoun>|<CLAUSE_WhoQ>誰</CLAUSE_WhoQ>)<FUNC_inner>就</FUNC_inner>"
         },
         "誰打破了這個平衡誰就輸": {
             "id": "6c7ea7dd-8796-441b-be48-0eae375de11c",
@@ -115,6 +133,16 @@
                 "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(吃|吃掉|吸收|攝入|耗損|花掉|吃著|煮|啃|喝|吃了)</(ACTION_verb|VerbP)>"
             ],
             "pattern": "<CLAUSE_WhoQ>誰</CLAUSE_WhoQ><(ACTION_verb|VerbP)>[^<]+</(ACTION_verb|VerbP)>(<CLAUSE_WhatQ>什麼</CLAUSE_WhatQ>|<ENTITY_nouny>什麼</ENTITY_nouny>)(<FUNC_in(ner|ter)>就</FUNC_in(ner|ter)>)?<(ACTION_verb|VerbP)>[^<]+</(ACTION_verb|VerbP)>(<CLAUSE_WhatQ>什麼</CLAUSE_WhatQ>|<ENTITY_nouny>什麼</ENTITY_nouny>)"
+        },
+        "任誰也知道這時候女孩還能發信": {
+            "id": "bc1218d1-1658-4412-a7ae-7be254778192",
+            "pos": "<ACTION_verb>任</ACTION_verb><CLAUSE_WhoQ>誰</CLAUSE_WhoQ><MODIFIER>也</MODIFIER><ACTION_verb>知道</ACTION_verb><TIME_justtime>這時候</TIME_justtime><ENTITY_oov>女孩</ENTITY_oov><FUNC_inner>還</FUNC_inner><MODAL>能</MODAL><ACTION_verb>發信</ACTION_verb>",
+            "lexy": [
+                "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(任|任副|出任|任過|後任|任總|改任|兼任|擔任|復任|調任)</(ACTION_verb|VerbP)>",
+                "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(知道|得知|明知|深知|獲知|知悉|知情|知曉|知足|確知|了解)</(ACTION_verb|VerbP)>",
+                "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(發信|發函|發去|寄信|遞交|致電|打電話|發報|傳訊|送錢|寄出)</(ACTION_verb|VerbP)>"
+            ],
+            "pattern": "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>任</(ACTION_verb|VerbP)><CLAUSE_WhoQ>誰</CLAUSE_WhoQ>(<(MODIFIER|ModifierP)>也</(MODIFIER|ModifierP)>|<QUANTIFIER>都</QUANTIFIER>)<(ACTION_verb|VerbP)>[^<]+</(ACTION_verb|VerbP)>"
         }
     },
     "alias": {},

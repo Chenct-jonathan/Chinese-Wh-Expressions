@@ -8,15 +8,16 @@
     "user_defined": {
         "_asNoun": [
             "久旺",
-            "奧會",
-            "詩",
-            "溫床",
-            "道理",
-            "鏡頭",
-            "古昔",
-            "小孩",
             "也許",
-            "彷彿"
+            "勝負",
+            "古昔",
+            "奧會",
+            "小孩",
+            "彷彿",
+            "溫床",
+            "詩",
+            "道理",
+            "鏡頭"
         ]
     },
     "utterance": {
@@ -138,6 +139,14 @@
             ],
             "pattern": "<CLAUSE_WhoQ>誰</CLAUSE_WhoQ><ACTION_lightVerb>[^<]+</ACTION_lightVerb>"
         },
+        "誰叫我從小就命運不好": {
+            "id": "74dbb2dd-bc46-41ae-804e-184f2e28743a",
+            "pos": "<CLAUSE_WhoQ>誰</CLAUSE_WhoQ><ACTION_verb>叫</ACTION_verb><ENTITY_pronoun>我</ENTITY_pronoun><FUNC_inner>從</FUNC_inner><MODIFIER>小</MODIFIER><FUNC_inner>就</FUNC_inner><ENTITY_nouny>命運</ENTITY_nouny><FUNC_negation>不</FUNC_negation><MODIFIER>好</MODIFIER>",
+            "lexy": [
+                "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(叫|叫作|叫喊|呼叫|傳呼|傳見|召開|吆喝|呼召|嗔喝|宣告)</(ACTION_verb|VerbP)>"
+            ],
+            "pattern": "<CLAUSE_WhoQ>誰</CLAUSE_WhoQ><(ACTION_verb|VerbP)>叫|教</(ACTION_verb|VerbP)><ENTITY_pronoun>[^<]+</ENTITY_pronoun>"
+        },
         "還有誰會來買本國的產品": {
             "id": "8b443d12-5092-4558-8790-bf799b665843",
             "pos": "<FUNC_conjunction>還有</FUNC_conjunction><CLAUSE_WhoQ>誰</CLAUSE_WhoQ><MODAL>會</MODAL><ACTION_verb>來</ACTION_verb><ACTION_verb>買</ACTION_verb><ENTITY_nouny>本國</ENTITY_nouny><FUNC_inner>的</FUNC_inner><ENTITY_noun>產品</ENTITY_noun>",
@@ -164,7 +173,7 @@
                 "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(決定|判定|商定|敲定|斷定|決策|約定|解決|談定|酌定|判斷)</(ACTION_verb|VerbP)>",
                 "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(接班|接下|接下來|接住|接到|接受|接手|接掌|接收|接替|接案)</(ACTION_verb|VerbP)>"
             ],
-            "pattern": "<CLAUSE_WhoQ>誰</CLAUSE_WhoQ>(.+)?(?!<CLAUSE_WhoQ>誰</CLAUSE_WhoQ>)(<(ACTION_verb|VerbP)>[^<]+</(ACTION_verb|VerbP)>)+"
+            "pattern": "(?<!</FUNC_conjunction>)<CLAUSE_WhoQ>誰</CLAUSE_WhoQ>((?!.誰.).)+(<(ACTION_verb|VerbP)>[^<]+</(ACTION_verb|VerbP)>)+"
         },
         "票投給誰只有天知、地知、我知": {
             "id": "4d74ffd0-0efc-4f88-87e1-7847b5689b76",
@@ -174,6 +183,16 @@
                 "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(知|明知|深知|知悉|知情|知曉|知足|知道|確知|了解|懂得)</(ACTION_verb|VerbP)>"
             ],
             "pattern": "(<QUANTIFIER>都</QUANTIFIER>)?<(ACTION_verb|VerbP)>[^<]+</(ACTION_verb|VerbP)>(<RANGE_(locality|period)>[^<]+</RANGE_(locality|period)>)?(<FUNC_inner>(向|於)</FUNC_inner>)?<CLAUSE_WhoQ>誰</CLAUSE_WhoQ>"
+        },
+        "所以它到底是誰在說什麼故事給誰聽 ": {
+            "id": "014917b2-333d-4090-a97b-93b508118911",
+            "pos": "<FUNC_inter>所以</FUNC_inter><ENTITY_pronoun>它</ENTITY_pronoun><FUNC_inner>到底</FUNC_inner><AUX>是</AUX><CLAUSE_WhoQ>誰</CLAUSE_WhoQ><ASPECT>在</ASPECT><ACTION_verb>說</ACTION_verb><CLAUSE_WhatQ>什麼</CLAUSE_WhatQ><ENTITY_noun>故事</ENTITY_noun><ACTION_verb>給</ACTION_verb><CLAUSE_WhoQ>誰</CLAUSE_WhoQ><ACTION_verb>聽</ACTION_verb>",
+            "lexy": [
+                "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(說|演說|說話|宣判|拼讀|談到|辯護|說過|說到|講出|說著)</(ACTION_verb|VerbP)>",
+                "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(給|供給|帶給|提供|發放|資助|給老|交給|留給|給聖|分給)</(ACTION_verb|VerbP)>",
+                "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(聽|判處|嗔怨|嚴斥|指斥|聲討|聽著|聽老|傷假|聽完|視兒)</(ACTION_verb|VerbP)>"
+            ],
+            "pattern": "<FUNC_in(ner|ter)>到底</FUNC_in(ner|ter)>(.+)?<CLAUSE_WhoQ>誰</CLAUSE_WhoQ>"
         },
         "不論發生在何時、何地、針對何人、由誰所為": {
             "id": "8bddc66c-f730-45fd-ab4f-9175cdaf0498",
