@@ -52,7 +52,7 @@
                 "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(寫|寫出|寫了|寫下|撰寫|書寫|寫成|寫字|寫完|寫著|編寫)</(ACTION_verb|VerbP)>",
                 "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(給|供給|帶給|提供|發放|資助|給對|分給|留給|交給|送給)</(ACTION_verb|VerbP)>"
             ],
-            "pattern": "<CLAUSE_WhoQ>誰</CLAUSE_WhoQ>(.+)?<CLAUSE_particle>[^<嗎]+</CLAUSE_particle>"
+            "pattern": "<CLAUSE_WhoQ>誰</CLAUSE_WhoQ>(.+)?<CLAUSE_particle>[^<嗎吧]+</CLAUSE_particle>"
         },
         "幸運者是誰": {
             "id": "e5456f1f-5d45-4230-8417-f124a3c297c3",
@@ -184,8 +184,8 @@
             ],
             "pattern": "(<QUANTIFIER>都</QUANTIFIER>)?<(ACTION_verb|VerbP)>[^<]+</(ACTION_verb|VerbP)>(<RANGE_(locality|period)>[^<]+</RANGE_(locality|period)>)?(<FUNC_inner>(向|於)</FUNC_inner>)?<CLAUSE_WhoQ>誰</CLAUSE_WhoQ>"
         },
-        "所以它到底是誰在說什麼故事給誰聽 ": {
-            "id": "014917b2-333d-4090-a97b-93b508118911",
+        "所以它到底是誰在說什麼故事給誰聽": {
+            "id": "1eb61a62-50b1-4ecc-bf31-f585982ef5f7",
             "pos": "<FUNC_inter>所以</FUNC_inter><ENTITY_pronoun>它</ENTITY_pronoun><FUNC_inner>到底</FUNC_inner><AUX>是</AUX><CLAUSE_WhoQ>誰</CLAUSE_WhoQ><ASPECT>在</ASPECT><ACTION_verb>說</ACTION_verb><CLAUSE_WhatQ>什麼</CLAUSE_WhatQ><ENTITY_noun>故事</ENTITY_noun><ACTION_verb>給</ACTION_verb><CLAUSE_WhoQ>誰</CLAUSE_WhoQ><ACTION_verb>聽</ACTION_verb>",
             "lexy": [
                 "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(說|演說|說話|宣判|拼讀|談到|辯護|說過|說到|講出|說著)</(ACTION_verb|VerbP)>",

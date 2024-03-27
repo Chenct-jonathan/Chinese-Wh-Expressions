@@ -299,7 +299,7 @@ def testIntent():
 
 if __name__ == "__main__":
     
-    inputLIST = ["不是你想約誰誰就來的"]
+    inputLIST = ["所以它到底是誰在說什麼故事給誰聽"]
     
     '''
     with open("../../log/log_TEST.txt", "w", encoding='utf-8') as log:
@@ -314,12 +314,13 @@ if __name__ == "__main__":
             log.write(f"universal wh checker：{resultDICT['universal wh checker']}\n")
             log.write("=======================================================================================================================================\n")
     '''
-            
+           
     print(f"測試句：{resultDICT['測試句']}")
     print(f"interrogative wh checker：{resultDICT['interrogative wh checker']}")
     print(f"existential wh checker：{resultDICT['existential wh checker']}")
     print(f"universal wh checker：{resultDICT['universal wh checker']}")            
     print("=======================================================================================================================================")     
+    
     
     '''
     begin = 0
@@ -327,7 +328,7 @@ if __name__ == "__main__":
     with open("../../Corpus/purged/shei_sinica_purged.txt", "r", encoding="utf-8") as f:
         testLIST = f.readlines()
         
-    with open("../../log/log_0315", "w", encoding='utf-8') as log:
+    with open("../../log/log_0327", "w", encoding='utf-8') as log:
         for i, inputSTR in enumerate(testLIST[begin:end], start=begin+1):
             resultDICT = execLoki(inputSTR)
             if 'intent' in resultDICT.keys():
@@ -342,6 +343,4 @@ if __name__ == "__main__":
             print(f"existential wh checker：{resultDICT['existential wh checker']}")
             print(f"universal wh checker：{resultDICT['universal wh checker']}")            
             print("=======================================================================================================================================")
-                       
-    
-    '''
+      '''                 
