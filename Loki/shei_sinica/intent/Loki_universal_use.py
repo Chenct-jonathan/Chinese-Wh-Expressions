@@ -187,9 +187,40 @@ def getResult(inputSTR, utterance, args, resultDICT, refDICT):
                 resultDICT["intent"] = [item for item in resultDICT["intent"] if "a" not in item]
                     
                 
-                    
+    if utterance == "誰也難討好":
+        if CHATBOT_MODE:
+            resultDICT["response"] = getResponse(utterance, args)
+        else:
+            resultDICT["universal"].append("誰也難討好")
+            
+            if 'a1' not in resultDICT["intent"] and 'a5' not in resultDICT["intent"] and 'a9' not in resultDICT["intent"] and 'a25' not in resultDICT["intent"]:
+                resultDICT["universal wh checker"] = True
+                resultDICT["interrogative wh checker"] = False
+                resultDICT["intent"].append("c12")
+                resultDICT["intent"] = [item for item in resultDICT["intent"] if "a" not in item]
+    
+    if utterance == "再也沒有誰能聽得到了":
+        if CHATBOT_MODE:
+            resultDICT["response"] = getResponse(utterance, args)
+        else:
+            resultDICT["universal"].append("再也沒有誰能聽得到了")
+            
+            if 'a1' not in resultDICT["intent"] and 'a5' not in resultDICT["intent"] and 'a9' not in resultDICT["intent"] and 'a25' not in resultDICT["intent"]:
+                resultDICT["universal wh checker"] = True
+                resultDICT["interrogative wh checker"] = False
+                resultDICT["intent"].append("c13")
+                resultDICT["intent"] = [item for item in resultDICT["intent"] if "a" not in item]        
                 
-        
-        
+    if utterance == "換了我們誰也會這樣做的":   
+        if CHATBOT_MODE:
+            resultDICT["response"] = getResponse(utterance, args)
+        else:
+            resultDICT["universal"].append("換了我們誰也會這樣做的")
+            
+            if 'a1' not in resultDICT["intent"] and 'a5' not in resultDICT["intent"] and 'a9' not in resultDICT["intent"] and 'a25' not in resultDICT["intent"]:
+                resultDICT["universal wh checker"] = True
+                resultDICT["interrogative wh checker"] = False
+                resultDICT["intent"].append("c14")
+                resultDICT["intent"] = [item for item in resultDICT["intent"] if "a" not in item]        
 
     return resultDICT

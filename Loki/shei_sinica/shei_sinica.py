@@ -299,7 +299,7 @@ def testIntent():
 
 if __name__ == "__main__":
     
-    inputLIST = ["所以它到底是誰在說什麼故事給誰聽"]
+    inputLIST = ["換了我們誰也會這樣做的"]
     
     '''
     with open("../../log/log_TEST.txt", "w", encoding='utf-8') as log:
@@ -328,7 +328,7 @@ if __name__ == "__main__":
     with open("../../Corpus/purged/shei_sinica_purged.txt", "r", encoding="utf-8") as f:
         testLIST = f.readlines()
         
-    with open("../../log/log_0327", "w", encoding='utf-8') as log:
+    with open("../../log/log_0410", "w", encoding='utf-8') as log:
         for i, inputSTR in enumerate(testLIST[begin:end], start=begin+1):
             resultDICT = execLoki(inputSTR)
             if 'intent' in resultDICT.keys():
@@ -343,4 +343,4 @@ if __name__ == "__main__":
             print(f"existential wh checker：{resultDICT['existential wh checker']}")
             print(f"universal wh checker：{resultDICT['universal wh checker']}")            
             print("=======================================================================================================================================")
-      '''                 
+    '''
