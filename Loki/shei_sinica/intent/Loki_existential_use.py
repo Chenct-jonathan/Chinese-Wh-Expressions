@@ -78,8 +78,6 @@ def getResult(inputSTR, utterance, args, resultDICT, refDICT):
                 resultDICT["interrogative wh checker"] = False
                 resultDICT["intent"].append("b4")
                 resultDICT["intent"] = [item for item in resultDICT["intent"] if "a" not in item]
-            if 'c5' in resultDICT["intent"]:
-                resultDICT["intent"] = [item for item in resultDICT["intent"] if "c" not in item]
 
     if utterance == "所以我記得是誰呀":
         if CHATBOT_MODE:

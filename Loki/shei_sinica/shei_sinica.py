@@ -299,22 +299,21 @@ def testIntent():
 
 if __name__ == "__main__":
     
-    inputLIST = ["換了我們誰也會這樣做的"]
+    inputLIST = ["誰不服從他的領導就要受處罰"]
     
     '''
     with open("../../log/log_TEST.txt", "w", encoding='utf-8') as log:
     '''
     for i, inputSTR in enumerate(inputLIST, start=1):  
         resultDICT = execLoki([inputSTR])
-    '''
+    '''  
             log.write(f"[{i}]\n")  
             log.write(f"測試句：{resultDICT['測試句']}\n")
             log.write(f"interrogative wh checker：{resultDICT['interrogative wh checker']}\n")
             log.write(f"existential wh checker：{resultDICT['existential wh checker']}\n")
             log.write(f"universal wh checker：{resultDICT['universal wh checker']}\n")
             log.write("=======================================================================================================================================\n")
-    '''
-           
+    '''       
     print(f"測試句：{resultDICT['測試句']}")
     print(f"interrogative wh checker：{resultDICT['interrogative wh checker']}")
     print(f"existential wh checker：{resultDICT['existential wh checker']}")
@@ -328,7 +327,7 @@ if __name__ == "__main__":
     with open("../../Corpus/purged/shei_sinica_purged.txt", "r", encoding="utf-8") as f:
         testLIST = f.readlines()
         
-    with open("../../log/log_0410", "w", encoding='utf-8') as log:
+    with open("../../log/log_0419", "w", encoding='utf-8') as log:
         for i, inputSTR in enumerate(testLIST[begin:end], start=begin+1):
             resultDICT = execLoki(inputSTR)
             if 'intent' in resultDICT.keys():
