@@ -27,7 +27,7 @@
             "lexy": [
                 "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(當權|疑歐|攘夷|當政|掌權|得勢|急進|失勢|專擅|亂政)</(ACTION_verb|VerbP)>"
             ],
-            "pattern": "(<FUNC_inter>不論</FUNC_inter>|<MODIFIER>無論</MODIFIER>)(<AUX>是</AUX>)?<CLAUSE_WhoQ>誰</CLAUSE_WhoQ>"
+            "pattern": "(<FUNC_inter>不論</FUNC_inter>|<MODIFIER>無論</MODIFIER>)(<AUX>是</AUX>|<ACTION_verb>[^<]+</ACTION_verb>)?<CLAUSE_WhoQ>誰</CLAUSE_WhoQ>"
         },
         "誰也不敢動": {
             "id": "15067f8b-a5da-4990-bda8-ad391a7e88a0",
@@ -105,6 +105,15 @@
             ],
             "pattern": "<CLAUSE_WhoQ>誰</CLAUSE_WhoQ>(.+)?<CLAUSE_WhoQ>誰</CLAUSE_WhoQ>(<MODAL>便</MODAL><AUX>是</AUX>|<AUX>就是</AUX>)"
         },
+        "半夜誰起來就順便看一下": {
+            "id": "346321d5-ceda-4147-9f02-1929695a2282",
+            "pos": "<TIME_day>半夜</TIME_day><CLAUSE_WhoQ>誰</CLAUSE_WhoQ><ACTION_verb>起來</ACTION_verb><FUNC_inner>就</FUNC_inner><MODIFIER>順便</MODIFIER><ACTION_verb>看</ACTION_verb><ENTITY_num>一</ENTITY_num><ENTITY_oov>下</ENTITY_oov>",
+            "lexy": [
+                "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(起來|起來了|下來|開來|出來|拉出來|弄得|拿出來|變成|出去|動到)</(ACTION_verb|VerbP)>",
+                "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(看|探看|收看|看守|看戲|看望|看護|看顧|觀看|光顧|探望)</(ACTION_verb|VerbP)>"
+            ],
+            "pattern": "<CLAUSE_WhoQ>誰</CLAUSE_WhoQ>[^說知道知到知叫教]+(<ENTITY_pronoun>[^<]+</ENTITY_pronoun>|<CLAUSE_WhoQ>誰</CLAUSE_WhoQ>)?<FUNC_in(ner|ter)>就</FUNC_in(ner|ter)>"
+        },
         "只要誰說有效我就帶他去": {
             "id": "6432a2fe-70c8-4016-91d5-c649d1028402",
             "pos": "<MODIFIER>只</MODIFIER><ACTION_verb>要</ACTION_verb><CLAUSE_WhoQ>誰</CLAUSE_WhoQ><ACTION_verb>說</ACTION_verb><MODIFIER>有效</MODIFIER><ENTITY_pronoun>我</ENTITY_pronoun><FUNC_inner>就</FUNC_inner><ACTION_verb>帶</ACTION_verb><ENTITY_pronoun>他</ENTITY_pronoun><ACTION_verb>去</ACTION_verb>",
@@ -114,7 +123,7 @@
                 "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(帶|佩帶|夾帶|帶病|帶走|挾帶|攜帶|隨帶|佩戴|承接|披掛)</(ACTION_verb|VerbP)>",
                 "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(去|要去|回去|想去|去了|跑去|回來|跑來|趕去|出去|來)</(ACTION_verb|VerbP)>"
             ],
-            "pattern": "<CLAUSE_WhoQ>誰</CLAUSE_WhoQ>(.+)?(<ENTITY_pronoun>[^<]+</ENTITY_pronoun>|<CLAUSE_WhoQ>誰</CLAUSE_WhoQ>)<FUNC_inner>就</FUNC_inner>"
+            "pattern": "<MODIFIER>只</MODIFIER><ACTION_verb>要</ACTION_verb><CLAUSE_WhoQ>誰</CLAUSE_WhoQ>(.+)?(<ENTITY_pronoun>[^<]+</ENTITY_pronoun>|<CLAUSE_WhoQ>誰</CLAUSE_WhoQ>)?<FUNC_inner>就</FUNC_inner>"
         },
         "換了我們誰也會這樣做的": {
             "id": "3a1b3758-add4-4e86-b7b5-ce7bfc2c0417",
