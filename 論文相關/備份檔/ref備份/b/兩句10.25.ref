@@ -1,0 +1,37 @@
+{
+    "language": "zh-tw",
+    "type": "advance",
+    "version": {
+        "atk": "v267",
+        "intent": "1.0"
+    },
+    "user_defined": {
+        "_asNoun": [
+            "奧會",
+            "久旺"
+        ]
+    },
+    "utterance": {
+        "誰也不服誰": {
+            "id": "7185fe6d-a6f7-4b64-a5dd-8c1598303209",
+            "pos": "<CLAUSE_WhoQ>誰</CLAUSE_WhoQ><MODIFIER>也</MODIFIER><FUNC_negation>不</FUNC_negation><ACTION_verb>服</ACTION_verb><CLAUSE_WhoQ>誰</CLAUSE_WhoQ>",
+            "lexy": [
+                "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(服|常服|服等|抵死|喪服|服到|裝束|制服|朝服|服正|服來)</(ACTION_verb|VerbP)>"
+            ],
+            "pattern": "<MODIFIER>也</MODIFIER><FUNC_negation>[^<]+</FUNC_negation><(ACTION_verb|VerbP)>[^<]+</(ACTION_verb|VerbP)><CLAUSE_WhoQ>誰</CLAUSE_WhoQ>"
+        },
+        "有一篇文章我不記得是誰寫的": {
+            "id": "b30e3463-258c-4fb4-8108-e07b15bc2ccd",
+            "pos": "<ACTION_verb>有</ACTION_verb><ENTITY_classifier>一篇</ENTITY_classifier><ENTITY_noun>文章</ENTITY_noun><ENTITY_pronoun>我</ENTITY_pronoun><FUNC_negation>不</FUNC_negation><ACTION_verb>記得</ACTION_verb><AUX>是</AUX><CLAUSE_WhoQ>誰</CLAUSE_WhoQ><ACTION_verb>寫</ACTION_verb><FUNC_inner>的</FUNC_inner>",
+            "lexy": [
+                "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(有|具有|兼有|存有|帶有|懷有|持有|擁有|有了|有著|保留)</(ACTION_verb|VerbP)>",
+                "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(記得|懂得|曉得|死記|熟記|牢記|記住|認得|謹記|識得|了解)</(ACTION_verb|VerbP)>",
+                "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(寫|寫出|寫了|寫下|撰寫|書寫|寫成|寫字|寫完|寫著|編寫)</(ACTION_verb|VerbP)>"
+            ],
+            "pattern": "<(ACTION_verb|VerbP)>[^<]+</(ACTION_verb|VerbP)><AUX>是</AUX><CLAUSE_WhoQ>誰</CLAUSE_WhoQ><(ACTION_verb|VerbP)>[^<]+</(ACTION_verb|VerbP)><FUNC_inner>的</FUNC_inner>"
+        }
+    },
+    "alias": {},
+    "prompt": {},
+    "document": []
+}
