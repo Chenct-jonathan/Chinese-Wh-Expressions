@@ -299,14 +299,14 @@ def testIntent():
 
 if __name__ == "__main__":
     
-    inputLIST = ["因此誰勝誰負仍是未定數"]
-    '''
+    inputLIST = ["誰先來誰先吃"]
     
+    '''
     with open("../../log/log_TEST.txt", "w", encoding='utf-8') as log:
     '''
     for i, inputSTR in enumerate(inputLIST, start=1):  
         resultDICT = execLoki([inputSTR])
-    ''' 
+    '''  
             log.write(f"[{i}]\n")  
             log.write(f"測試句：{resultDICT['測試句']}\n")
             log.write(f"interrogative wh checker：{resultDICT['interrogative wh checker']}\n")
@@ -328,7 +328,7 @@ if __name__ == "__main__":
     with open("../../Corpus/purged/shei_sinica_purged.txt", "r", encoding="utf-8") as f:
         testLIST = f.readlines()
         
-    with open("../../log/log_0422_2.txt", "w", encoding='utf-8') as log:
+    with open("../../log/log_0423.txt", "w", encoding='utf-8') as log:
         for i, inputSTR in enumerate(testLIST[begin:end], start=begin+1):
             resultDICT = execLoki(inputSTR)
             if 'intent' in resultDICT.keys():
