@@ -299,7 +299,7 @@ def testIntent():
 
 if __name__ == "__main__":
     
-    inputLIST = ["誰先來誰先吃"]
+    inputLIST = ["誰跟誰在一起都沒差"]
     
     '''
     with open("../../log/log_TEST.txt", "w", encoding='utf-8') as log:
@@ -315,7 +315,7 @@ if __name__ == "__main__":
             log.write("=======================================================================================================================================\n")
     '''       
     print(f"測試句：{resultDICT['測試句']}")
-    print(f"{i}. {resultDICT['intent']}\n")
+    print(f"{resultDICT['intent']}\n")
     print(f"interrogative wh checker：{resultDICT['interrogative wh checker']}")
     print(f"existential wh checker：{resultDICT['existential wh checker']}")
     print(f"universal wh checker：{resultDICT['universal wh checker']}")            

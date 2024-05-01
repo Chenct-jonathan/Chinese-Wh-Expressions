@@ -33,7 +33,7 @@ def sinica_purger(i, targetSTR):
     corpusLIST = [] 
     lineCount = 1 
     for j in rawLIST:  
-        purgeLIST = re.findall(r'{}'.format(regexLIST[i][1]), j) # 抽取含有標的詞彙的句子
+        purgeLIST = re.findall(r'{}'.format(regexLIST[i][1]), j) # 抽取含有標的詞彙的句子 
         purgeLIST = [item.replace('\n', '') for item in purgeLIST] # 處理句子被 "\n" 切開的情形
         purgeLIST = rm_marks(purgeLIST) # 處理無意義標點符號及空格
         corpusLIST.extend(purgeLIST) # 將批次處理切分後的句子放入 corpusLIST
