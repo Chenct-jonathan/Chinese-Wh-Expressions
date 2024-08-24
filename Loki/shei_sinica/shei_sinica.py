@@ -298,31 +298,40 @@ def testIntent():
 
 
 if __name__ == "__main__":
+        
+    inputLIST = ["到底是誰會來都不知道", "你都不理誰", "你誰都不理"]
     
-    inputLIST = ["誰跟誰在一起都沒差"]
-    
-    '''
-    with open("../../log/log_TEST.txt", "w", encoding='utf-8') as log:
-    '''
     for i, inputSTR in enumerate(inputLIST, start=1):  
         resultDICT = execLoki([inputSTR])
-    '''  
+        print(f"測試句：{resultDICT['測試句']}")
+        #print(f"{resultDICT['intent']}\n")
+        print(f"interrogative wh checker：{resultDICT['interrogative wh checker']}")
+        print(f"existential wh checker：{resultDICT['existential wh checker']}")
+        print(f"universal wh checker：{resultDICT['universal wh checker']}")            
+        print("=======================================================================================================================================")    
+    
+'''
+    with open("../../log/log_P.txt", "w", encoding='utf-8') as log:
+    
+        for i, inputSTR in enumerate(inputLIST, start=1):  
+            resultDICT = execLoki([inputSTR])
+            print(f"測試句：{resultDICT['測試句']}")
+            #print(f"{resultDICT['intent']}\n")
+            print(f"interrogative wh checker：{resultDICT['interrogative wh checker']}")
+            print(f"existential wh checker：{resultDICT['existential wh checker']}")
+            print(f"universal wh checker：{resultDICT['universal wh checker']}")            
+            print("=======================================================================================================================================")        
+    
             log.write(f"[{i}]\n")  
             log.write(f"測試句：{resultDICT['測試句']}\n")
             log.write(f"interrogative wh checker：{resultDICT['interrogative wh checker']}\n")
             log.write(f"existential wh checker：{resultDICT['existential wh checker']}\n")
             log.write(f"universal wh checker：{resultDICT['universal wh checker']}\n")
-            log.write("=======================================================================================================================================\n")
-    '''       
-    print(f"測試句：{resultDICT['測試句']}")
-    print(f"{resultDICT['intent']}\n")
-    print(f"interrogative wh checker：{resultDICT['interrogative wh checker']}")
-    print(f"existential wh checker：{resultDICT['existential wh checker']}")
-    print(f"universal wh checker：{resultDICT['universal wh checker']}")            
-    print("=======================================================================================================================================")     
+            
+        
+
     
     
-    '''
     begin = 0
     end = 2697
     with open("../../Corpus/purged/shei_sinica_purged.txt", "r", encoding="utf-8") as f:
@@ -343,4 +352,4 @@ if __name__ == "__main__":
             print(f"existential wh checker：{resultDICT['existential wh checker']}")
             print(f"universal wh checker：{resultDICT['universal wh checker']}")            
             print("=======================================================================================================================================")
-     '''
+'''
