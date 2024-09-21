@@ -298,5 +298,15 @@ def getResult(inputSTR, utterance, args, resultDICT, refDICT):
             resultDICT["interrogative"].append("所以它到底是誰在說什麼故事給誰聽")
             resultDICT["intent"].append("a25")
             resultDICT["intent"] = [item for item in resultDICT["intent"] if "c" not in item]
-    
+            
+    if utterance == "我想知道誰都考第一名":
+        if CHATBOT_MODE:
+            resultDICT["response"] = getResponse(utterance, args)
+        else:
+            resultDICT["interrogative wh checker"] = True
+            resultDICT["universal wh checker"] = False
+            resultDICT["interrogative"].append("我想知道誰都考第一名")
+            resultDICT["intent"].append("a26")
+            resultDICT["intent"] = [item for item in resultDICT["intent"] if "c" not in item]        
+            
     return resultDICT
