@@ -298,7 +298,7 @@ def testIntent():
 
 
 if __name__ == "__main__":
-        
+    '''    
     inputLIST = ["還有誰會來都不確定"]
     
     for i, inputSTR in enumerate(inputLIST, start=1):  
@@ -310,7 +310,7 @@ if __name__ == "__main__":
         print(f"universal wh checker：{resultDICT['universal wh checker']}")            
         print("=======================================================================================================================================")    
     
-'''
+
     with open("../../log/log_P.txt", "w", encoding='utf-8') as log:
     
         for i, inputSTR in enumerate(inputLIST, start=1):  
@@ -328,7 +328,7 @@ if __name__ == "__main__":
             log.write(f"existential wh checker：{resultDICT['existential wh checker']}\n")
             log.write(f"universal wh checker：{resultDICT['universal wh checker']}\n")
             
-        
+'''        
 
     
     
@@ -352,4 +352,3 @@ if __name__ == "__main__":
             print(f"existential wh checker：{resultDICT['existential wh checker']}")
             print(f"universal wh checker：{resultDICT['universal wh checker']}")            
             print("=======================================================================================================================================")
-'''

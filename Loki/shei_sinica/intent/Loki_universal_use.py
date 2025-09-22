@@ -133,7 +133,7 @@ def getResult(inputSTR, utterance, args, resultDICT, refDICT):
         else:
             resultDICT["universal"].append("選誰來做都一樣可行")
             
-            if 'a1' not in resultDICT["intent"] or 'a5' not in resultDICT["intent"] or 'a9' not in resultDICT["intent"] or 'a25' not in resultDICT["intent"]or 'a26' not in resultDICT["intent"]:
+            if all(x not in resultDICT["intent"] for x in ['a1', 'a5', 'a9', 'a25', 'a26']):
                 resultDICT["universal wh checker"] = True
                 resultDICT["interrogative wh checker"] = False
                 resultDICT["intent"].append("c2")
